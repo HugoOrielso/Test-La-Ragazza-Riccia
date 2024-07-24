@@ -1,0 +1,64 @@
+#root {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.logo {
+  height: 4em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #ff408f);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #ff89ba);
+}
+
+.main-title{
+  color:#202945;
+  text-wrap: balance;
+}
+
+
+
+.section_test{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  color: black;
+}
+
+.header_test{
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  justify-content: space-between;
+}
+
+@media screen and (max-width:470px) {
+  .main-title{
+    font-size: 1.5em;
+    margin: 0;
+    text-align: left;
+  }
+}
+
+@media screen and (max-width:430px) {
+  .logo{
+    height: 3em;
+  }
+  .main-title{
+    font-size: 1.5em;
+    margin: 0;
+    text-align: left;
+  }
+}
+
+@media screen and (max-width:350px) {
+  .main-title{
+    font-size: 1.2em;
+  }
+}
