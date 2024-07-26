@@ -37,15 +37,13 @@ const GetDataClient = () => {
                         if(answersUserOrdered && keyAndValuesUser){
                             setAnswersUser(answersUserOrdered)
                         }
-                    },500)
+                    },100)
                 }
     
             } 
         } catch (error) {
             toast.error("Ocurrió un error enviando la información, intenta de nuevo.")
         }
-
-
     }
 
     return (
