@@ -1,7 +1,8 @@
 import { create } from 'zustand'
 import { type Question } from '../types'
 import { persist } from 'zustand/middleware'
-import { getAllquestions } from '../components/getQuestions'
+import { getAllquestions } from '../services/getQuestionsAndData'
+
 interface State {
     questions: Question[]
     currentQuestion: number
@@ -9,16 +10,19 @@ interface State {
     selectAnswer: (questionId: number, answerIndex: number) => void
     goNextQuestion: () => void
     goPreviusQuestion: () => void
+    selectQuestion: (selectedQuestion: number) => void
     reset: () => void
 }
 
-export const UseQuestionsStore = create<State>()(persist(( set, get)=>{
-    return{
+export const UseQuestionsStore = create<State>()(persist((set, get) => {
+    return {
         questions: [],
+        recomendacion: null,
+        threeAnswersUser: null,
         currentQuestion: 0,
         fetchQuestions: async () => {
-            const questions = await getAllquestions()
-            set({ questions })
+            const allQuestions = await getAllquestions()
+            set({ questions: allQuestions })
         },
         selectAnswer(questionId, answerIndex) {
             const { questions } = get()
@@ -29,27 +33,29 @@ export const UseQuestionsStore = create<State>()(persist(( set, get)=>{
                 ...questionInfo,
                 userSelectedAnswer: answerIndex
             }
-            set({ questions: newQuestions})
+            set({ questions: newQuestions })
         },
         goNextQuestion: () => {
             const { currentQuestion, questions } = get()
             const nextQuestion = currentQuestion + 1
-            if(nextQuestion < questions.length){
+            if (nextQuestion < questions.length) {
                 set({ currentQuestion: nextQuestion })
             }
         },
         goPreviusQuestion: () => {
             const { currentQuestion } = get()
             const previusQuestion = currentQuestion - 1
-            if(currentQuestion >= 0){
-                
+            if (currentQuestion >= 0) {
                 set({ currentQuestion: previusQuestion })
             }
         },
-        reset: () =>{
-            set({ currentQuestion: 0 , questions: [] })
+        selectQuestion: (selectedQuestion) => {
+            set({ currentQuestion: selectedQuestion })
+        },
+        reset: () => {
+            set({ currentQuestion: 0, questions: []})
         }
     }
-},{
-    name: 'questions', 
+}, {
+    name: 'test'
 }))

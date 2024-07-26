@@ -1,0 +1,54 @@
+.controls_pagination{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.footerQuestions{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    flex-direction: column;
+}
+
+.slider_questions{
+    display: flex;
+    gap: 10px;
+}
+
+.indexQuestion{
+    color: white;
+    display: flex;
+    width: 1em;
+    height: 1em;
+    align-items: center;
+    justify-content: center;
+    color: rgb(0, 0, 0);
+    border: 1px solid rgba(144, 202, 249, 0.5);
+    padding: .2em;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: all .3s ease;
+}
+
+.indexQuestion:hover{
+    color: rgb(144, 202, 249);
+    border: 1px solid rgba(144, 202, 249, 0.5);
+    background-color: rgba(144, 202, 249, 0.24)
+}
+
+.indexQuestion.active{
+    color: rgb(206, 147, 216);
+    border: 1px solid rgba(206, 147, 216, 0.5);
+    background-color: rgba(206, 147, 216, 0.24);
+}
+
+
+@media screen and (max-width:500px) {
+    .slider_questions{
+        gap: 5px;
+    }
+}
+

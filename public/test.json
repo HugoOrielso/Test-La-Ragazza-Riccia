@@ -15,8 +15,7 @@
         "answers": [
           "Frizz",
           "Hidratación",
-          "Definición de rizos",
-          "Volumen"
+          "Definición de rizos"
         ]
       },
       {
@@ -25,8 +24,7 @@
         "answers": [
           "Diario",
           "Cada 2-3 días",
-          "Una vez a la semana",
-          "Menos de una vez a la semana"
+          "Una vez a la semana"
         ]
       },
       {
@@ -36,62 +34,6 @@
           "Sí, regularmente",
           "Sí, ocasionalmente",
           "No, nunca"
-        ]
-      },
-      {
-        "id":5,
-        "question": "¿Qué tipo de productos prefieres usar?",
-        "answers": [
-          "Champú y acondicionador",
-          "Mascarillas y tratamientos",
-          "Cremas y geles para peinar",
-          "Aceites y sueros"
-        ]
-      },
-      {
-        "id":6,
-        "question": "¿Prefieres productos naturales o no te importa?",
-        "answers": [
-          "Prefiero productos naturales",
-          "No me importa, mientras funcionen",
-          "Una mezcla de ambos"
-        ]
-      },
-      {
-        "id":7,
-        "question": "¿Tienes alguna sensibilidad o alergia a ciertos ingredientes?",
-        "answers": [
-          "Sí, sulfatos",
-          "Sí, parabenos",
-          "Sí, siliconas",
-          "No, ninguna"
-        ]
-      },
-      {
-        "id":8,
-        "question": "¿Cuánto tiempo dedicas a tu rutina de cuidado del cabello?",
-        "answers": [
-          "Menos de 15 minutos",
-          "15-30 minutos",
-          "Más de 30 minutos"
-        ]
-      },
-      {
-        "id":9,
-        "question": "¿Qué tan importante es el costo de los productos para ti?",
-        "answers": [
-          "Muy importante, busco opciones económicas",
-          "Moderadamente importante, busco un balance entre calidad y precio",
-          "No es importante, prefiero productos de alta calidad"
-        ]
-      },
-      {
-        "id":10,
-        "question": "¿Te interesa probar nuevas marcas o prefieres mantenerte con las que ya conoces?",
-        "answers": [
-          "Me gusta probar nuevas marcas",
-          "Prefiero mantenerme con las marcas que ya conozco",
-          "Estoy abierta/o a ambas opciones"
         ]
       }
     ]

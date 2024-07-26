@@ -29,6 +29,7 @@
   flex-direction: column;
   width: 100%;
   color: black;
+  margin-top: .5em;
 }
 
 .header_test{

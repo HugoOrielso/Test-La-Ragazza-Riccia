@@ -7,18 +7,34 @@
     border: 1px solid #202945;
     height: 25em;
     gap: 8px;
+    width: 100%;
+    max-width: 600px;
     border-radius: 5px;
     padding: .5em;
     box-shadow: 0 0 5px #202945;
-    min-width: 250px;
+    min-width: 600px;
 }
 
-.card_test h5{
+.header_question{
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    margin-bottom: .5em;
+    width: 100%;
+    gap: 2px;
+}
+
+.question{
+    display: flex;
     font-size: 1.5em;
     text-align: left;
     margin: 0;
     color: #E92176;
+    transition: all .5s ease-in-out;
 }
+
+
+
 .container_info{
     width: 100%;
     height: 100%;
@@ -29,8 +45,16 @@
     flex-direction: column;
     width: 100%;
     border-radius: 5px;
+    opacity: 0;
+    background-color: #ffffff;
+    transition: all .2s ease;
+}
+
+.card_container_answers.fade-in{
+    opacity: 1;
     background-color: #202945;
 }
+
 
 .card_container_answers button{
     text-align: left;
@@ -40,6 +64,24 @@
     cursor: pointer;
     color: white;
     font-weight: 500;
+    width: 0%;
+    font-size: 0;
+    opacity: 0;
+    border-bottom: .5px #535864 solid;
+    transition: all .2s ease;
+}
+
+.card_container_answers button.fade-in{
+    text-align: left;
+    padding: 10px;
+    font-size: 14px;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: white;
+    font-weight: 500;
+    width: 100%;
+    opacity: 1;
     border-bottom: .5px #535864 solid;
     transition: all .5s ease;
 }
@@ -57,8 +99,12 @@
 
 .indicadores{
     display: flex;
-    text-align: center;
-    
+    align-items: start;
+    justify-content: start;
+}
+
+.indicadores p{
+    margin: 0;
 }
 
 .controls_arrows{
@@ -72,7 +118,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: all 1s ease;
 }
+
 
 .controls_arrows p{
     display: flex;
@@ -84,7 +132,7 @@
     align-items: center;
     justify-content: center;
     width: 100%;
-    padding: .5em;
+    padding: .2em;
     border-radius: 50%;
     cursor: pointer;
     border: none;
@@ -101,6 +149,14 @@
     transform: scale(1.15);
 }
 
+
+.container-btn-repetir{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
 .button {
     display: flex;
     justify-content: center;
@@ -108,30 +164,31 @@
     padding: 6px 12px;
     gap: 8px;
     height: 34px;
-    width: 112px;
+    max-width: 250px;
+    width: 100%;
     border: none;
     background: #ff362b34;
     border-radius: 20px;
     cursor: pointer;
-  }
+}
   
-  .lable {
+.lable {
     line-height: 20px;
     font-size: 17px;
     color: #FF342B;
     font-family: sans-serif;
     letter-spacing: 1px;
-  }
+}
   
-  .button:hover {
+.button:hover {
     background: #ff362b52;
-  }
+}
   
-  .button:hover .svg-icon {
+.button:hover .svg-icon {
     animation: spin 2s linear infinite;
-  }
+}
   
-  @keyframes spin {
+@keyframes spin {
     0% {
       transform: rotate(0deg);
     }
@@ -139,10 +196,40 @@
     100% {
       transform: rotate(-360deg);
     }
-  }
+}
+
+
+@media screen and (max-width:650px) {
+    .card_test{
+        min-width: 500px;
+    }
+}
+
+
+
+@media screen and (max-width:550px) {
+    .card_test{
+        min-width: 440px;
+    }
+}
+
+@media screen and (max-width:480px) {
+    
+    .card_test{
+        min-width: 400px;
+    }
+}
+
+@media screen and (max-width:440px) {
+    
+    .card_test{
+        min-width: 250px;
+    }
+}
 
 @media screen and (max-width:400px) {
     .card_test h5{
         font-size: 1em;
     }
 }
+
