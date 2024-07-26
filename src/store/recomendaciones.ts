@@ -13,7 +13,7 @@ interface State {
     setRecommendation: (matchRecomendacion: Response | null) => void
 }
 
-export const UseRecomendacionesStore = create<State>()(persist((set,_) => {
+export const UseRecomendacionesStore = create<State>()(persist((set) => {
     return {
         patterns: [],
         recomendacion: null,
