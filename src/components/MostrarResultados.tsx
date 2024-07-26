@@ -4,14 +4,16 @@ import { useEffect, useState } from "react"
 import { Response } from "../types"
 import '/public/styles/recomendaciones.css'
 import FooterFinalData from "./FooterFinalData"
+import { toast, Toaster } from "sonner"
 
 
 const MostrarResultados = () => {
   
   const [recomendedProduct, setRecomendedProduct] = useState<Response>()
   const threeAnswersUser = UseRecomendacionesStore(state => state.threeAnswersUser)
+
   async function getPatterns() {
-    const res = await fetch("http://localhost:5173/pattern.json")
+    const res = await fetch(`${import.meta.env.NODE_ENV == 'development' ? 'http://localhost:5173/pattern.json' : "https://test-la-ragazza-riccia.vercel.app/pattern.json" }`)
     const { responses } = await res.json()
     const pattern = responses
     if (!threeAnswersUser)  return
@@ -22,6 +24,7 @@ const MostrarResultados = () => {
 
   useEffect(()=>{
     getPatterns()
+    toast.success("Hemos enviado tu cupón de descuento, revisa la bandeja de entrada.")
   },[])
 
   return (
@@ -58,10 +61,10 @@ const MostrarResultados = () => {
               })
             }
           </ul>
-
         </div>
       </section>
       <FooterFinalData/>
+      <Toaster richColors />
     </>
   )
 }

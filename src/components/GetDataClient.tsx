@@ -9,14 +9,12 @@ import emailjs from '@emailjs/browser';
 
 const GetDataClient = () => {
     const form = useRef<HTMLFormElement>(null);
-
-
-    
     const [dataName, setDataName] = useState<string>("")
     const [dataEmail, setDataEmail] = useState<string>("")
     const [answersUserOrdered, setAnswersUserOrdered] = useState<Record<number,number> | null>(null)
     const questionsAndAnswersUser = UseQuestionsStore(state => state.questions).slice(1,4)
     const setAnswersUser = UseRecomendacionesStore(state => state.setThreeAnswersUser)
+
     const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault()
         let keyAndValuesUser = orderDataAndSetData(questionsAndAnswersUser)
@@ -28,26 +26,25 @@ const GetDataClient = () => {
             return
         }
     
-
-        if (form.current) {
-            emailjs
-            .sendForm(import.meta.env.VITE_EMAILJS_SERVICE_ID , import.meta.env.VITE_EMAILJS_TEMPLATE_ID, form.current, {
-              publicKey: import.meta.env.VITE_EMAILJS_PUBLIC,
-            })
-            .then(
-              () => {
-                toast.success("Hemos enviado los resultados a tu email.")
-                setTimeout(()=>{
-                    if(answersUserOrdered && keyAndValuesUser){
-                        setAnswersUser(answersUserOrdered)
-                    }
-                },500)
-              },
-              (error) => {
-                console.log('FAILED...', error.text);
-              },
-            );
+        try {
+            if (form.current) {
+                const res = await emailjs.sendForm(import.meta.env.VITE_EMAILJS_SERVICE_ID , import.meta.env.VITE_EMAILJS_TEMPLATE_ID, form.current, {
+                    publicKey: import.meta.env.VITE_EMAILJS_PUBLIC,
+                })
+                
+                if(res.status === 200){
+                    setTimeout(()=>{
+                        if(answersUserOrdered && keyAndValuesUser){
+                            setAnswersUser(answersUserOrdered)
+                        }
+                    },500)
+                }
+    
+            } 
+        } catch (error) {
+            toast.error("Ocurrió un error enviando la información, intenta de nuevo.")
         }
+
 
     }
 

@@ -1,21 +1,19 @@
 import { Question, Response } from "../types"
 
 export async function getAllquestions() {
-    const res = await fetch("http://localhost:5173/test.json")
+    const res = await fetch(`${import.meta.env.NODE_ENV == 'development' ? 'http://localhost:5173/test.json' : "https://test-la-ragazza-riccia.vercel.app/test.json" }`)
     const { responses } = await res.json()
     const questions = responses
     return questions
 }
 
-
-
 export async function getPatterns() {
-    const res = await fetch("http://localhost:5173/pattern.json")
+    const res = await fetch(`${import.meta.env.NODE_ENV == 'development' ? 'http://localhost:5173/pattern.json' : "https://test-la-ragazza-riccia.vercel.app/pattern.json" }`)
     const { responses } = await res.json()
     const pattern = responses
-    
     return pattern
 }
+
 
 export const findMatchingRecommendation = (threeUserMainQuestios: Record<number, number>, patternsResponses: Response[]) => {
     if(threeUserMainQuestios && patternsResponses){
