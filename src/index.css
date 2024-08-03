@@ -12,6 +12,7 @@
 
 *{
   font-family: 'Poppins', sans-serif;
+  scrollbar-width: thin;
 }
 
 body {

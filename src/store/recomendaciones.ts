@@ -1,36 +1,47 @@
 import { create } from 'zustand'
-import { Response } from '../types'
+import { ObjectOfRecommendation } from '../types'
 import { persist } from 'zustand/middleware'
-import { getPatterns } from '../services/getQuestionsAndData'
+import { findMatchingRecommendation, getPatternsAndSetRecomendation } from '../services/getQuestionsAndData'
 
 interface State {
-    patterns: Response[]
+    rutaUser: string | null,
+    setRutaUser: (ruta: string) => void
     threeAnswersUser: Record<number,number> | null
     setThreeAnswersUser: (answerUser:Record<number,number>) => void
     reset: () => void
     fetchPatterns: () => Promise<void>
-    recomendacion: Response | null
-    setRecommendation: (matchRecomendacion: Response | null) => void
+    setRecommendation: (matchRecomendacion: ObjectOfRecommendation) => void
+    recomendacion: ObjectOfRecommendation | null
+    defaultProduct: ObjectOfRecommendation | null
 }
 
-export const UseRecomendacionesStore = create<State>()(persist((set) => {
+export const UseRecomendacionesStore = create<State>()(persist((set,get) => {
     return {
-        patterns: [],
+        rutaUser: null,
         recomendacion: null,
+        defaultProduct: null,
         threeAnswersUser: null,
-        reset: () => {
-            set({ threeAnswersUser: null, patterns: [], recomendacion: null })
+        setRutaUser(ruta) {
+            set({ rutaUser: ruta })
         },
         fetchPatterns: async () => {
-            const allPatterns = await getPatterns()
-            set({ patterns: allPatterns })
+            const { rutaUser, threeAnswersUser } = get()
+            if(rutaUser && threeAnswersUser){
+                const allPatterns: any = await getPatternsAndSetRecomendation(rutaUser)
+                let match:ObjectOfRecommendation = findMatchingRecommendation(threeAnswersUser,allPatterns.responses)
+                set({ recomendacion: match, defaultProduct: allPatterns.defaultProduct })
+            }
         },
         setRecommendation(matchRecomendacion) {
             set({ recomendacion: matchRecomendacion })
         },
         setThreeAnswersUser(answerUser) {
             set({ threeAnswersUser: answerUser })
-        }
+        },
+        reset: () => {
+            set({ threeAnswersUser: null, recomendacion: null })
+        },
+        
     }
 }, {
     name: 'recomendaciones'

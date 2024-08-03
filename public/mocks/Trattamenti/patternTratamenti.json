@@ -1,0 +1,121 @@
+{
+      "responses": [
+            {
+              "pattern": {
+                "4": 0,
+                "5": 0,
+                "6": 0
+              },
+              "recommendation": [
+                {
+                  "rutina": ["Applicare ogni settimana."],
+                  "productos": [
+                    {
+                      "nombre": "Crema 3 en 1 250 ml",
+                      "urlImage": "https://i0.wp.com/laragazzariccia.com/wp-content/uploads/2023/05/crema-3-in-1-250ml.jpg?fit=1000%2C1000&ssl=1",
+                      "precio": 25,
+                      "webSite": "https://laragazzariccia.com/prodotto/crema-3-in-1/",
+                      "rutina": "Applicare ogni settimana."
+                    },
+                    {
+                      "nombre": "Olio 30 ml",
+                      "urlImage": "https://i0.wp.com/laragazzariccia.com/wp-content/uploads/2023/05/OLIO-IDRATANTE-30-ML.jpg?fit=1000%2C1000&ssl=1",
+                      "precio": 17,
+                      "webSite": "https://laragazzariccia.com/prodotto/olio-idratante-30-ml/",
+                      "rutina": "Applicare ogni settimana."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+                "pattern": {
+                  "4": 0,
+                  "5": 0,
+                  "6": 1
+                },
+                "recommendation": [
+                  {
+                    "rutina":["Applicare ogni 15 giorni."],
+                    "productos": [
+                      {
+                          "nombre": "Crema 3 en 1 250 ml",
+                          "urlImage": "https://i0.wp.com/laragazzariccia.com/wp-content/uploads/2023/05/crema-3-in-1-250ml.jpg?fit=1000%2C1000&ssl=1",
+                          "precio": 25,
+                          "webSite": "https://laragazzariccia.com/prodotto/crema-3-in-1/"
+                      },
+                      {
+                          "nombre": "Olio 30 ml",
+                          "urlImage": "https://i0.wp.com/laragazzariccia.com/wp-content/uploads/2023/05/OLIO-IDRATANTE-30-ML.jpg?fit=1000%2C1000&ssl=1",
+                          "precio": 17,
+                          "webSite": "https://laragazzariccia.com/prodotto/olio-idratante-30-ml/"
+                      }
+                    ]
+                  }
+                ]
+            },
+            {
+                "pattern": {
+                  "4": 1,
+                  "5": 1,
+                  "6": 1
+                },
+                "recommendation": [
+                  {
+                    "rutina":["Applicare ogni 15 giorni."],
+                    "productos": [
+                      {
+                          "nombre": "Trattamento intensivo alle proteine",
+                          "urlImage": "https://i0.wp.com/laragazzariccia.com/wp-content/uploads/2023/10/Trattamento-intensivo-proteinas_la-ragazza-riccia.png?fit=1080%2C1080&ssl=1",
+                          "precio": 25,
+                          "webSite": "https://laragazzariccia.com/prodotto/trattamento-intensivo-alle-proteine/"
+                      }
+                    ]
+                  }
+                ]
+            },
+            {
+                "pattern": {
+                  "4": 1,
+                  "5": 1,
+                  "6": 0
+                },
+                "recommendation": [
+                    {
+                      "rutina":["Applicare ogni settimana."],
+                      "productos": [
+                        {
+                            "nombre": "Trattamento intensivo alle proteine",
+                            "urlImage": "https://i0.wp.com/laragazzariccia.com/wp-content/uploads/2023/10/Trattamento-intensivo-proteinas_la-ragazza-riccia.png?fit=1080%2C1080&ssl=1",
+                            "precio": 25,
+                            "webSite": "https://laragazzariccia.com/prodotto/trattamento-intensivo-alle-proteine/"
+                        }
+                      ]
+                    }
+                  ]
+                } 
+            
+        ],
+        "defaultProduct": {
+            "recommendation": [
+              {
+                "rutina": "Applicare 1 volta al mese",
+                "productos": [
+                    {
+                        "nombre": "Conditioner 250 ml",
+                        "urlImage": "https://i0.wp.com/laragazzariccia.com/wp-content/uploads/2023/05/Ragazza-riccia-prodotti-conditioner.jpg?fit=1000%2C1000&ssl=1",
+                        "precio": 24.90,
+                        "webSite": "https://laragazzariccia.com/prodotto/balsamo-e-leave-in/"
+                    },
+                    {
+                        "nombre": "Olio 30 ml",
+                        "urlImage": "https://i0.wp.com/laragazzariccia.com/wp-content/uploads/2023/05/OLIO-IDRATANTE-30-ML.jpg?fit=1000%2C1000&ssl=1",
+                        "precio": 17,
+                        "webSite": "https://laragazzariccia.com/prodotto/olio-idratante-30-ml/"
+                    }
+                ]
+              }
+            ]
+        }
+    }
+    

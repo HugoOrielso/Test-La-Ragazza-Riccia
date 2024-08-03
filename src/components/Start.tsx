@@ -2,10 +2,10 @@ import { UseQuestionsStore } from '../store/questions'
 import '/public/styles/start.css'
 
 export const Start = ()=>{
-    const fetchQuestions = UseQuestionsStore(state =>  state.fetchQuestions)
+    const fetchQuestion = UseQuestionsStore(state =>  state.fetchFirstQuestion)
 
     const handleClick = () =>{
-        fetchQuestions()
+        fetchQuestion()
     }
 
     return(

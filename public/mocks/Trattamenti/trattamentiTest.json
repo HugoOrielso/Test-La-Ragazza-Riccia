@@ -1,0 +1,98 @@
+{
+    "responses": [
+      {
+        "id":1,
+        "question": "I TUOI CAPELLI SONO SOTTILI?",
+        "answers": [
+          "Si",
+          "No"
+        ]
+      },
+      {
+        "id":2,
+        "question": "QUANTI CAPELLI HAI?",
+        "explication": "(Per rispondere a questa domanda, prova a guardare il tuo cuoio capelluto allo specchio, riesci a vedere lapelle con facilità o ci sono anti capelli a ricoprirla?)",
+        "answers": [
+          "Molti",
+          "Medio",
+          "Pochi"
+        ]
+      },
+      
+      {
+        "id":3,
+        "question": "IL RICCIO SI FORMA FACILMENTE?",
+          "answers": [
+          "Si",
+          "No"
+        ]
+      },
+      {
+        "id":4,
+        "question": "I TUOI CAPELLI TRATTENGONO  L’ACQUA?",
+        "explication": "(Per rispondere a questa domanda, pensa al momento in cui inizi il lavaggio si bagnano facilmente o impieghi un pò prima che sia ben bagnati?",
+        "answers": [
+          "Fanno fatica a bagnarsi",
+          "Si bagnano facilmente"
+        ]
+      },
+      {
+        "id":5,
+        "question": "AL TATTO SONO RUVIDI?",
+        "explication": "(Per rispondere a questa domanda prendi un singolo capello e toccalo usando indice e pollice, sono ruvidi o morbidi al tatto?",
+        "answers": [
+          "Si, sono ruvidi",
+          "No, sono morbidi"
+        ]
+      },
+      {
+        "id":6,
+        "question": "HAI DECOLORATO O COLORATO NEGLI ULTIMI 6 MESI?",
+        "answers": [
+          "Ho capelli decolorati / faccio la tinta",
+          "Ho colore naturale"
+        ]
+      },
+      {
+        "id":7,
+        "question": "I TUOI RICCI SONO PIù LUNGHI DA BAGANTO RISPETTO A QUANDO SONO ASCIUTTI?",
+        "answers": [
+          "Son più lunghi da bagnato",
+          "Restano più o meno della stessa lunghezza"
+        ]
+      },
+      {
+        "id":8,
+        "question": "ASSUMI FARMACI?",
+        "answers": [
+          "Si",
+          "No"
+        ]
+      },
+      {
+        "id":9,
+        "question": "SEI IN GRAVIDANZA?",
+        "answers": [
+          "Si",
+          "No"
+        ]
+      },
+      {
+        "id":10,
+        "question": "SEI IN POST PARTO O ALLATTAMENTO?",
+        "answers": [
+          "Si",
+          "No"
+        ]
+      },
+      {
+        "id":11,
+        "question": "TI SENTI PARTICOLARMENTE STRESSATA?",
+        "answers": [
+          "Si",
+          "No"
+        ]
+      }
+    ]
+  }
+  

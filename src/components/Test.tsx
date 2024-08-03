@@ -5,25 +5,26 @@ import { FooterQuestions } from "./FooterQuestions"
 import '/public/styles/test.css'
 import { IndicadorQuestion } from "../Arrows"
 
-const getBackGroundColor = (info: QuestionType, index: number) =>{
+const getBackGroundColor = (info: QuestionType, index: number, ) =>{
     const { userSelectedAnswer } = info
     if(userSelectedAnswer == null) return 
     if(index == userSelectedAnswer) return '#41548c'
 }
+
 const Question = ({ info } : {info: QuestionType }) => {
     const selectAnswer = UseQuestionsStore(state => state.selectAnswer)
     const currentQuestion = UseQuestionsStore(state => state.currentQuestion)
-    const handleClick = ( answerIndex:number ) => () => {
-        selectAnswer(info.id, answerIndex)
-    }
-    
+    const goNextQuestion = UseQuestionsStore(state => state.goNextQuestion)
     const [fadeClass, setFadeClass] = useState('fade-in');
+    const handleClick = ( answerIndex:number ) =>  () => {
+        selectAnswer(info.id, answerIndex)
+        goNextQuestion()
+    }
     useEffect(() => {
         setFadeClass('');
         const timeoutId = setTimeout(() => {
             setFadeClass('fade-in');
-        }, 400);
-
+        }, 350);
         return () => clearTimeout(timeoutId);
     }, [currentQuestion]);
     return (
@@ -31,17 +32,17 @@ const Question = ({ info } : {info: QuestionType }) => {
             <div className="card_test">
                 <section className="container_info" >
                     <section className={`header_question`}>
-                        <h5 className={`question`}> {info.question} </h5> 
+                        <h5 className={`question ${fadeClass}`}> {info.question} </h5> 
                         <div>
                             <IndicadorQuestion />
                         </div>
                     </section>
-                    <section className={`card_container_answers ${fadeClass}`}>
+                    <section className={`card_container_answers`}>
                         {info.answers.map((answer,i)=>{
                             let borderBottom = info.answers.length == (i + 1) ? 'none': ""
                             return(
                                 <button className={`${fadeClass}`} onClick={handleClick(i)} key={i} style={{border: borderBottom, backgroundColor: getBackGroundColor(info,i) }}>
-                                    {answer}
+                                    <span className={`span_answer ${fadeClass}`}>{answer}</span>
                                 </button>
                             )
                         })}

@@ -1,14 +1,19 @@
 import { create } from 'zustand'
 import { type Question } from '../types'
 import { persist } from 'zustand/middleware'
-import { getAllquestions } from '../services/getQuestionsAndData'
+import { getAllquestions, getFirstQuestion } from '../services/getQuestionsAndData'
 
 interface State {
     questions: Question[]
+    firstQuestion: Question | null
+    firstElectionUser: string | null
+    threeAnswersUser: Record<number,number> | null
     currentQuestion: number
     fetchQuestions: () => Promise<void>
+    fetchFirstQuestion: () => Promise<void>
     selectAnswer: (questionId: number, answerIndex: number) => void
     goNextQuestion: () => void
+    setFirstElectionUser: (election: string) => void
     goPreviusQuestion: () => void
     selectQuestion: (selectedQuestion: number) => void
     reset: () => void
@@ -17,12 +22,23 @@ interface State {
 export const UseQuestionsStore = create<State>()(persist((set, get) => {
     return {
         questions: [],
-        recomendacion: null,
+        firstQuestion: null,
+        firstElectionUser: null,
         threeAnswersUser: null,
         currentQuestion: 0,
         fetchQuestions: async () => {
-            const allQuestions = await getAllquestions()
-            set({ questions: allQuestions })
+            const { firstElectionUser } = get()
+            if(firstElectionUser){
+                const allQuestions = await getAllquestions(firstElectionUser)
+                set({ questions: allQuestions })
+            }
+        },
+        async fetchFirstQuestion () {
+            const firstQuestion = await getFirstQuestion()
+            set({ firstQuestion: firstQuestion })
+        },
+        setFirstElectionUser(election) {
+            set({ firstElectionUser: election.toLocaleLowerCase() })
         },
         selectAnswer(questionId, answerIndex) {
             const { questions } = get()
@@ -53,7 +69,7 @@ export const UseQuestionsStore = create<State>()(persist((set, get) => {
             set({ currentQuestion: selectedQuestion })
         },
         reset: () => {
-            set({ currentQuestion: 0, questions: []})
+            set({ currentQuestion: 0, questions: [], firstElectionUser : null, firstQuestion: null})
         }
     }
 }, {

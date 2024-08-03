@@ -4,7 +4,7 @@
     align-items: start;
     flex-direction: column;
     justify-content: space-between;
-    border: 1px solid #202945;
+    border: 1px solid rgba(0, 0, 0, .08);
     height: 25em;
     gap: 8px;
     width: 100%;
@@ -22,6 +22,8 @@
     margin-bottom: .5em;
     width: 100%;
     gap: 2px;
+    min-height: 75px;
+    overflow: hidden;
 }
 
 .question{
@@ -29,11 +31,24 @@
     font-size: 1.5em;
     text-align: left;
     margin: 0;
+    filter: blur(10px);
     color: #E92176;
+    width: 100%;
     transition: all .5s ease-in-out;
+    transform: translate(-110%);
+    overflow: hidden;
 }
 
-
+.question.fade-in{
+    display: flex;
+    font-size: 1.5em;
+    text-align: left;
+    margin: 0;
+    transform: translate(0%);
+    filter: blur(0px);
+    color: #E92176;
+    transition: all .5s ease;
+}
 
 .container_info{
     width: 100%;
@@ -45,14 +60,10 @@
     flex-direction: column;
     width: 100%;
     border-radius: 5px;
-    opacity: 0;
-    background-color: #ffffff;
-    transition: all .2s ease;
-}
-
-.card_container_answers.fade-in{
-    opacity: 1;
     background-color: #202945;
+    border: 1px solid rgba(0, 0, 0, .08);
+
+    transition: all .2s ease;
 }
 
 
@@ -64,30 +75,30 @@
     cursor: pointer;
     color: white;
     font-weight: 500;
-    width: 0%;
-    font-size: 0;
-    opacity: 0;
+    width: 100%;
+    font-size: 14px;
+    overflow: hidden;
     border-bottom: .5px #535864 solid;
     transition: all .2s ease;
 }
 
-.card_container_answers button.fade-in{
-    text-align: left;
-    padding: 10px;
-    font-size: 14px;
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    color: white;
-    font-weight: 500;
-    width: 100%;
-    opacity: 1;
-    border-bottom: .5px #535864 solid;
-    transition: all .5s ease;
-}
-
 .card_container_answers button:hover{
     background-color: #41548c;
+}
+
+.span_answer{
+    filter: blur(10px);
+    display: flex;
+    width: 100%;
+    transform: translate(110%);
+    transition: all .5s ease-in-out;
+}
+
+.span_answer.fade-in{
+    filter: blur(0px);
+    transform: translate(0%);
+    transition: all .5s ease;
+
 }
 
 .controles{
@@ -209,6 +220,9 @@
 
 
 @media screen and (max-width:550px) {
+    .header_question{
+        min-height: 100px;
+    }
     .card_test{
         min-width: 440px;
     }
@@ -222,7 +236,12 @@
 }
 
 @media screen and (max-width:440px) {
-    
+    .question{
+        font-size: 18px;
+    }
+    .question.question.fade-in{
+        font-size: 18px;
+    }
     .card_test{
         min-width: 250px;
     }
