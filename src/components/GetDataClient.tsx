@@ -21,9 +21,7 @@ const GetDataClient = () => {
         event.preventDefault()
         let keyAndValuesUser = orderDataAndSetData(threeAnswersUser)
         setAnswersUserOrdered(keyAndValuesUser)
-        if(answersUserOrdered && keyAndValuesUser){
-            setAnswersUser(answersUserOrdered)
-        }
+        
 
         if (!dataEmail || !dataName) {
             toast.error("Faltan datos por enviar")
