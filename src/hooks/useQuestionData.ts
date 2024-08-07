@@ -12,15 +12,20 @@ export const useQuestionData = () =>{
 export const searchThreeAnswers = () =>{
     const userSelected = UseQuestionsStore(state=> state.firstElectionUser)
     let questionsAndAnswersUser = UseQuestionsStore(state => state.questions)
+    console.log(userSelected);
+    
     
     if(userSelected === 'styling'){
         questionsAndAnswersUser = questionsAndAnswersUser.slice(0,3)
     }
     if(userSelected === 'trattamento'){
         questionsAndAnswersUser = questionsAndAnswersUser.slice(3,6)
+        
     }
     if(userSelected === 'lavaggio'){
         questionsAndAnswersUser = questionsAndAnswersUser.slice(5,9)
     }
-    return { questionsAndAnswersUser }
+
+    
+    return  questionsAndAnswersUser 
 }

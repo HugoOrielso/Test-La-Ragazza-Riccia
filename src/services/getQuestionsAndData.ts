@@ -54,14 +54,17 @@ export const findMatchingRecommendation = (threeUserMainQuestios: Record<number,
     }
 };
 
-export const orderDataAndSetData = (threeMainQuestionsUser: Question[])=>{
+export const orderDataAndSetData = (threeMainQuestionsUser: Question[]) => {
+    
     const userAnswers: Record<string, number> = threeMainQuestionsUser.reduce((acc, { id, userSelectedAnswer }) => {
         if (userSelectedAnswer !== undefined) {
             acc[id] = userSelectedAnswer;
         }
         return acc;
-    }, {} as Record<number,number>);
-    return userAnswers
+    }, {} as Record<string, number>);
+    
+    return userAnswers;
 }
+
 
 

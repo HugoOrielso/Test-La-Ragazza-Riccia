@@ -6,6 +6,7 @@ import { orderDataAndSetData } from "../services/getQuestionsAndData"
 import { UseRecomendacionesStore } from "../store/recomendaciones"
 import emailjs from '@emailjs/browser';
 import { searchThreeAnswers } from "../hooks/useQuestionData"
+import { Question } from "../types"
 
 const GetDataClient = () => {
     const form = useRef<HTMLFormElement>(null);
@@ -13,13 +14,14 @@ const GetDataClient = () => {
     const setAnswersUser = UseRecomendacionesStore(state => state.setThreeAnswersUser)
     const [dataEmail,setDataEmail] = useState<string>()
     const [dataName, setDataName] = useState<string>()
-    const threeAnswersUser: any = searchThreeAnswers()
+    const threeAnswersUser: Question[] = searchThreeAnswers()
     
     const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault()
-        let keyAndValuesUser: any = orderDataAndSetData(threeAnswersUser)
+        let keyAndValuesUser: Record<number,number> = orderDataAndSetData(threeAnswersUser)
         setAnswersUserOrdered(keyAndValuesUser)
 
+        
         if (!dataEmail || !dataName) {
             toast.error("Faltan datos por enviar")
             return
@@ -31,11 +33,9 @@ const GetDataClient = () => {
                     publicKey: import.meta.env.VITE_EMAILJS_PUBLIC,
                 })
                 if(res.status === 200){
-                    setTimeout(()=>{
-                        if(answersUserOrdered && keyAndValuesUser){
-                            setAnswersUser(answersUserOrdered)
-                        }
-                    },100)
+                    if(answersUserOrdered && keyAndValuesUser){
+                        setAnswersUser(answersUserOrdered)
+                    }
                 }
             } 
         } catch (error: any) {
