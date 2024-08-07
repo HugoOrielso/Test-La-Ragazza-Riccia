@@ -33,9 +33,11 @@ export async function getPatternsAndSetRecomendation(userSelected: string) {
     if(userSelected.toLocaleLowerCase() == "trattamento"){
       jsonUrl = 'Trattamenti/patternTratamenti.json'
     }
+    
     if(userSelected.toLocaleLowerCase() == "styling"){
       jsonUrl = 'Styling/patternStyling.json'
     }
+
     const request = await fetch(domainUrl + jsonUrl)
     const data = await request.json()
     return data

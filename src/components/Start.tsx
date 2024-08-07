@@ -3,7 +3,6 @@ import '/public/styles/start.css'
 
 export const Start = ()=>{
     const fetchQuestion = UseQuestionsStore(state =>  state.fetchFirstQuestion)
-
     const handleClick = () =>{
         fetchQuestion()
     }

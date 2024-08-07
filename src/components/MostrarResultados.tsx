@@ -1,7 +1,7 @@
 import { UseRecomendacionesStore } from "../store/recomendaciones"
 import { useEffect } from "react"
 import '/public/styles/recomendaciones.css'
-import FooterFinalData from "./FooterFinalData"
+import ResetTest from "./ResetTest"
 import { toast, Toaster } from "sonner"
 import { GenerateDefatultProduct, GenerateProductsRecomended } from "../helpers/ProductsDefaultAndRecomendations"
 
@@ -22,7 +22,7 @@ const MostrarResultados = () => {
         <GenerateProductsRecomended />
         <GenerateDefatultProduct  />
       </section>
-      <FooterFinalData/>
+      <ResetTest/>
       <Toaster richColors />
     </>
   )

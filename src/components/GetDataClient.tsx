@@ -7,21 +7,18 @@ import { UseRecomendacionesStore } from "../store/recomendaciones"
 import emailjs from '@emailjs/browser';
 import { searchThreeAnswers } from "../hooks/useQuestionData"
 
-
-
 const GetDataClient = () => {
     const form = useRef<HTMLFormElement>(null);
     const [answersUserOrdered, setAnswersUserOrdered] = useState<Record<number,number> | null>(null)
     const setAnswersUser = UseRecomendacionesStore(state => state.setThreeAnswersUser)
     const [dataEmail,setDataEmail] = useState<string>()
     const [dataName, setDataName] = useState<string>()
-    const threeAnswersUser = searchThreeAnswers()
+    const threeAnswersUser: any = searchThreeAnswers()
     
     const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault()
-        let keyAndValuesUser = orderDataAndSetData(threeAnswersUser)
+        let keyAndValuesUser: any = orderDataAndSetData(threeAnswersUser)
         setAnswersUserOrdered(keyAndValuesUser)
-        
 
         if (!dataEmail || !dataName) {
             toast.error("Faltan datos por enviar")
@@ -41,7 +38,11 @@ const GetDataClient = () => {
                     },100)
                 }
             } 
-        } catch (error) {
+        } catch (error: any) {
+            if(error.status === 422){
+                toast.error('Envía un formato correcto de email.')
+                return
+            }
             toast.error("Ocurrió un error enviando la información, intenta de nuevo.")
         }
     }

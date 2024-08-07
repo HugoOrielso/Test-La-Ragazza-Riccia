@@ -1,7 +1,7 @@
 import { UseQuestionsStore } from '../store/questions'
 import { UseRecomendacionesStore } from '../store/recomendaciones'
 
-export const FooterFinalData = () => {
+export const ResetTest = () => {
   const resetQuestions =  UseQuestionsStore(state => state.reset)
   const resetRecomendations = UseRecomendacionesStore(state => state.reset)
   function handleReset(){
@@ -19,4 +19,4 @@ export const FooterFinalData = () => {
   )
 }
 
-export default FooterFinalData
+export default ResetTest
