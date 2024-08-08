@@ -1,0 +1,213 @@
+{
+      "responses": [
+            {
+              "pattern": {
+                "6": 0,
+                "7": 0,
+                "8": 0
+              },
+              "recommendation": [
+                {
+                  "rutina": ["Lavaggio invertito basso (LIB)."],
+                  "productos": [
+                    {
+                      "nombre": "Shampoo 250 ml",
+                      "urlImage": "https://i0.wp.com/laragazzariccia.com/wp-content/uploads/2023/05/SHAMPOO-250-ML-rizos-felicess.jpg?fit=1000%2C1000&ssl=1",
+                      "precio": 24,
+                      "webSite": "https://laragazzariccia.com/prodotto/shampoo-250ml/"
+                    },
+                    {
+                      "nombre": "Conditioner 250 ml",
+                      "urlImage": "https://i0.wp.com/laragazzariccia.com/wp-content/uploads/2023/05/Ragazza-riccia-prodotti-conditioner.jpg?fit=1000%2C1000&ssl=1",
+                      "precio": 24.90,
+                      "webSite": "https://laragazzariccia.com/prodotto/balsamo-e-leave-in/"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+                "pattern": {
+                  "6": 1,
+                  "7": 1,
+                  "8": 1
+                },
+                "recommendation": [
+                  {
+                    "rutina": ["Lavaggio invertito alto (LIA)."],
+                    "productos": [
+                      {
+                        "nombre": "Shampoo 250 ml",
+                        "urlImage": "https://i0.wp.com/laragazzariccia.com/wp-content/uploads/2023/05/SHAMPOO-250-ML-rizos-felicess.jpg?fit=1000%2C1000&ssl=1",
+                        "precio": 24,
+                        "webSite": "https://laragazzariccia.com/prodotto/shampoo-250ml/"
+                      },
+                      {
+                        "nombre": "Conditioner 250 ml",
+                        "urlImage": "https://i0.wp.com/laragazzariccia.com/wp-content/uploads/2023/05/Ragazza-riccia-prodotti-conditioner.jpg?fit=1000%2C1000&ssl=1",
+                        "precio": 24.90,
+                        "webSite": "https://laragazzariccia.com/prodotto/balsamo-e-leave-in/"
+                      }
+                    ]
+                  }
+                ]
+            },
+            {
+                "pattern": {
+                  "6": 0,
+                  "7": 1,
+                  "8": 1
+                },
+                "recommendation": [
+                  {
+                    "rutina": ["Lavaggio invertito basso (LIB)."],
+                    "productos": [
+                      {
+                        "nombre": "Shampoo 250 ml",
+                        "urlImage": "https://i0.wp.com/laragazzariccia.com/wp-content/uploads/2023/05/SHAMPOO-250-ML-rizos-felicess.jpg?fit=1000%2C1000&ssl=1",
+                        "precio": 24,
+                        "webSite": "https://laragazzariccia.com/prodotto/shampoo-250ml/"
+                      },
+                      {
+                        "nombre": "Conditioner 250 ml",
+                        "urlImage": "https://i0.wp.com/laragazzariccia.com/wp-content/uploads/2023/05/Ragazza-riccia-prodotti-conditioner.jpg?fit=1000%2C1000&ssl=1",
+                        "precio": 24.90,
+                        "webSite": "https://laragazzariccia.com/prodotto/balsamo-e-leave-in/"
+                      }
+                    ]
+                  }
+                ]
+            },
+            {
+                "pattern": {
+                  "6": 0,
+                  "7": 1,
+                  "8": 0
+                },
+                "recommendation": [
+                    {
+                      "rutina": ["Lavaggio invertito basso (LIB)."],
+                      "productos": [
+                        {
+                          "nombre": "Shampoo 250 ml",
+                          "urlImage": "https://i0.wp.com/laragazzariccia.com/wp-content/uploads/2023/05/SHAMPOO-250-ML-rizos-felicess.jpg?fit=1000%2C1000&ssl=1",
+                          "precio": 24,
+                          "webSite": "https://laragazzariccia.com/prodotto/shampoo-250ml/"
+                        },
+                        {
+                          "nombre": "Conditioner 250 ml",
+                          "urlImage": "https://i0.wp.com/laragazzariccia.com/wp-content/uploads/2023/05/Ragazza-riccia-prodotti-conditioner.jpg?fit=1000%2C1000&ssl=1",
+                          "precio": 24.90,
+                          "webSite": "https://laragazzariccia.com/prodotto/balsamo-e-leave-in/"
+                        }
+                      ]
+                    }
+                  ]
+              },            
+              {
+                "pattern": {
+                  "6": 1,
+                  "7": 0,
+                  "8": 0
+                },
+                "recommendation": [
+                    {
+                      "rutina": ["Lavaggio invertito basso (LIB), con 1 solo passaggio di shampoo."],
+                      "productos": [
+                        {
+                          "nombre": "Shampoo 250 ml",
+                          "urlImage": "https://i0.wp.com/laragazzariccia.com/wp-content/uploads/2023/05/SHAMPOO-250-ML-rizos-felicess.jpg?fit=1000%2C1000&ssl=1",
+                          "precio": 24,
+                          "webSite": "https://laragazzariccia.com/prodotto/shampoo-250ml/"
+                        },
+                        {
+                          "nombre": "Conditioner 250 ml",
+                          "urlImage": "https://i0.wp.com/laragazzariccia.com/wp-content/uploads/2023/05/Ragazza-riccia-prodotti-conditioner.jpg?fit=1000%2C1000&ssl=1",
+                          "precio": 24.90,
+                          "webSite": "https://laragazzariccia.com/prodotto/balsamo-e-leave-in/"
+                        }
+                      ]
+                    }
+                  ]
+              },
+              {
+                "pattern": {
+                  "6": 1,
+                  "7": 0,
+                  "8": 1
+                },
+                "recommendation": [
+                    {
+                      "rutina": ["Lavaggio invertito alto (LIA)."],
+                      "productos": [
+                        {
+                          "nombre": "Shampoo 250 ml",
+                          "urlImage": "https://i0.wp.com/laragazzariccia.com/wp-content/uploads/2023/05/SHAMPOO-250-ML-rizos-felicess.jpg?fit=1000%2C1000&ssl=1",
+                          "precio": 24,
+                          "webSite": "https://laragazzariccia.com/prodotto/shampoo-250ml/"
+                        },
+                        {
+                          "nombre": "Conditioner 250 ml",
+                          "urlImage": "https://i0.wp.com/laragazzariccia.com/wp-content/uploads/2023/05/Ragazza-riccia-prodotti-conditioner.jpg?fit=1000%2C1000&ssl=1",
+                          "precio": 24.90,
+                          "webSite": "https://laragazzariccia.com/prodotto/balsamo-e-leave-in/"
+                        }
+                      ]
+                    }
+                  ]
+              },
+              {
+                "pattern": {
+                  "6": 1,
+                  "7": 1,
+                  "8": 0
+                },
+                "recommendation": [
+                    {
+                      "rutina": ["Lavaggio invertito alto (LIA) con 1 solo pasaggio di shampoo."],
+                      "productos": [
+                        {
+                          "nombre": "Shampoo 250 ml",
+                          "urlImage": "https://i0.wp.com/laragazzariccia.com/wp-content/uploads/2023/05/SHAMPOO-250-ML-rizos-felicess.jpg?fit=1000%2C1000&ssl=1",
+                          "precio": 24,
+                          "webSite": "https://laragazzariccia.com/prodotto/shampoo-250ml/"
+                        },
+                        {
+                          "nombre": "Conditioner 250 ml",
+                          "urlImage": "https://i0.wp.com/laragazzariccia.com/wp-content/uploads/2023/05/Ragazza-riccia-prodotti-conditioner.jpg?fit=1000%2C1000&ssl=1",
+                          "precio": 24.90,
+                          "webSite": "https://laragazzariccia.com/prodotto/balsamo-e-leave-in/"
+                        }
+                      ]
+                    }
+                  ]
+              },
+              {
+                "pattern": {
+                  "6": 0,
+                  "7": 0,
+                  "8": 1
+                },
+                "recommendation": [
+                    {
+                      "rutina": ["Lavaggio invertito basso (LIB)."],
+                      "productos": [
+                        {
+                          "nombre": "Shampoo 250 ml",
+                          "urlImage": "https://i0.wp.com/laragazzariccia.com/wp-content/uploads/2023/05/SHAMPOO-250-ML-rizos-felicess.jpg?fit=1000%2C1000&ssl=1",
+                          "precio": 24,
+                          "webSite": "https://laragazzariccia.com/prodotto/shampoo-250ml/"
+                        },
+                        {
+                          "nombre": "Conditioner 250 ml",
+                          "urlImage": "https://i0.wp.com/laragazzariccia.com/wp-content/uploads/2023/05/Ragazza-riccia-prodotti-conditioner.jpg?fit=1000%2C1000&ssl=1",
+                          "precio": 24.90,
+                          "webSite": "https://laragazzariccia.com/prodotto/balsamo-e-leave-in/"
+                        }
+                      ]
+                    }
+                  ]
+              }             
+        ]
+    }
+    

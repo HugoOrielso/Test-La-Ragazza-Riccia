@@ -21,6 +21,7 @@ export interface Recommendation {
 }
 export interface RecommendationDos {
   rutina: string;
+  consejo?: string;
   productos: Producto[];
 }
 

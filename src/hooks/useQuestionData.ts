@@ -12,8 +12,6 @@ export const useQuestionData = () =>{
 export const searchThreeAnswers = () =>{
     const userSelected = UseQuestionsStore(state=> state.firstElectionUser)
     let questionsAndAnswersUser = UseQuestionsStore(state => state.questions)
-    console.log(userSelected);
-    
     
     if(userSelected === 'styling'){
         questionsAndAnswersUser = questionsAndAnswersUser.slice(0,3)
@@ -23,9 +21,27 @@ export const searchThreeAnswers = () =>{
         
     }
     if(userSelected === 'lavaggio'){
-        questionsAndAnswersUser = questionsAndAnswersUser.slice(5,9)
+        questionsAndAnswersUser = questionsAndAnswersUser.slice(5,8)
     }
-
-    
     return  questionsAndAnswersUser 
 }
+
+
+
+export const consejos = () => {
+    const userSelected = UseQuestionsStore(state=> state.firstElectionUser)
+    if(userSelected === 'trattamento'){
+        let questionsAndAnswersUser = UseQuestionsStore(state => state.questions).slice(7,10)
+        let validation = questionsAndAnswersUser.some((item)=>{
+            return item.userSelectedAnswer === 0
+        })
+        if(validation === true){
+            return 'trattamento'
+        }
+    }
+    if(userSelected === 'styling'){
+        return 'styling'
+    }
+    return null
+}
+

@@ -14,16 +14,13 @@
                       "nombre": "Crema 3 en 1 250 ml",
                       "urlImage": "https://i0.wp.com/laragazzariccia.com/wp-content/uploads/2023/05/crema-3-in-1-250ml.jpg?fit=1000%2C1000&ssl=1",
                       "precio": 25,
-                      "webSite": "https://laragazzariccia.com/prodotto/crema-3-in-1/",
-                      "rutina": "Applicare ogni settimana."
+                      "webSite": "https://laragazzariccia.com/prodotto/crema-3-in-1/"
                     },
                     {
                       "nombre": "Olio 30 ml",
                       "urlImage": "https://i0.wp.com/laragazzariccia.com/wp-content/uploads/2023/05/OLIO-IDRATANTE-30-ML.jpg?fit=1000%2C1000&ssl=1",
                       "precio": 17,
-                      "webSite": "https://laragazzariccia.com/prodotto/olio-idratante-30-ml/",
-                      "rutina": "Applicare ogni settimana."
-                    }
+                      "webSite": "https://laragazzariccia.com/prodotto/olio-idratante-30-ml/"                    }
                   ]
                 }
               ]
@@ -100,6 +97,7 @@
             "recommendation": [
               {
                 "rutina": "Applicare 1 volta al mese",
+                "consejo": "Ricorda che se stai assumendo farmaci, o sei in post parto / allattamento, o ti trovi in un particolare momento di stress, i capelli possono risultare meno reattivi ai trattamenti e più ribelli durante la fase di styling, non demoralizzarti e continua a seguire la tua routine di cure  per garantire una ripresa più veloce.",
                 "productos": [
                     {
                         "nombre": "Conditioner 250 ml",
