@@ -19,6 +19,9 @@ const MostrarResultados = () => {
     patternsfromStore()
   }
 
+  console.log(import.meta.env.VITE_EMAILJS_SERVICE_ID);
+  
+
   const enviarMail = async ()=>{
     try {
       emailjs.init({
@@ -28,13 +31,18 @@ const MostrarResultados = () => {
         user_email: email,
         my_html: html
       };
-      const request = await emailjs.send(import.meta.env.VITE_EMAILJS_SERVICE_ID, import.meta.env.VITE_EMAILJS_TEMPLATE_ID, templateParams)
-      const response = request.status
+
+      emailjs.send(import.meta.env.VITE_EMAILJS_SERVICE_ID, import.meta.env.VITE_EMAILJS_TEMPLATE_ID, templateParams).then(
+        (response) => {
+          console.log('SUCCESS!', response.status, response.text);
+          recomendationFalse()
+          toast.success("Hemos enviado tu cupón de descuento, revisa la bandeja de entrada.")
+        },
+        (error) => {
+          console.log('FAILED...', error);
+        },
+      );
       
-      if(response === 200){
-        recomendationFalse()
-        toast.success("Hemos enviado tu cupón de descuento, revisa la bandeja de entrada.")
-      }
       
     } catch (error) {
       toast.error('Ocurrió un error al enviar tu')
