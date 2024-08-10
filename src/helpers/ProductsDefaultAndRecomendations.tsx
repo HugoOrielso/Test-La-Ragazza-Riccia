@@ -48,6 +48,7 @@ export const GenerateDefatultProduct = () =>{
 
 export const GenerateProductsRecomended = () =>{
   const product = UseRecomendacionesStore(state => state.recomendacion)
+  
   return(
     <>
       {product ?

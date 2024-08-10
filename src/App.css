@@ -3,6 +3,22 @@
   text-align: center;
 }
 
+.main_logo{
+  height: 4em;
+  transition: all .25s ease;
+  transform: rotate(6deg)
+}
+
+.main_logo:hover {
+  filter: drop-shadow(0 0 2em #ff408f);
+  transition: all .25s ease;
+
+}
+
+.main_logo:hover {
+  filter: drop-shadow(0 0 2em #ff89ba);
+}
+
 .logo {
   height: 4em;
   will-change: filter;
@@ -18,7 +34,7 @@
 }
 
 .main-title{
-  color:#202945;
+  color:#EA287A;
   text-wrap: balance;
 }
 
@@ -36,7 +52,7 @@
   display: flex;
   align-items: center;
   gap: 1em;
-  justify-content: space-between;
+  justify-content: center;
 }
 
 @media screen and (max-width:470px) {

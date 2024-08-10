@@ -119,6 +119,11 @@
 }
 
 @media screen and (max-width:880px) {
+    .layout_product{
+        display: grid;
+        width: 100%;
+        grid-template-columns: repeat(auto-fit,minmax(80px,1fr));
+    }
     .recomendaciones{
         flex-direction: column;
     }
@@ -151,7 +156,11 @@
 @media screen and (max-width:400px) {
     .layout_product{
         display: grid;
-        grid-template-columns: repeat(2,1fr);
+        width: 100%;
+        grid-template-columns: repeat(auto-fit,minmax(80px,1fr));
+    }
+    .recomendacion h2{
+        font-size: 18px;
     }
     .product img{
         max-width: 150px;

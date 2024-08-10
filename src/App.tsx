@@ -22,7 +22,7 @@ function App() {
         <header>
           <div className='header_test'>
             <h1 className='main-title'>Test Recomendaciones</h1>
-            <img src={logoRiccia} className='logo' alt="Logo la Ragazza Riccia" title='Logo la Ragazza Riccia'/>
+            <img src={logoRiccia} className='main_logo' alt="Logo la Ragazza Riccia" title='Logo la Ragazza Riccia'/>
           </div>
         </header>
         <section className='section_test'>

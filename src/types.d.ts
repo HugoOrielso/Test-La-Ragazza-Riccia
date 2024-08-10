@@ -35,6 +35,7 @@ interface Producto {
   urlImage: string;
   precio: number;
   webSite: string;
+  descripcion?: string
 }
 
 interface Pattern {

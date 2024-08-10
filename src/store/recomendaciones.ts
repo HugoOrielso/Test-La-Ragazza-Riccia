@@ -4,7 +4,10 @@ import { persist } from 'zustand/middleware'
 import { findMatchingRecommendation, getPatternsAndSetRecomendation } from '../services/getQuestionsAndData'
 
 interface State {
-    rutaUser: string | null,
+    rutaUser: string | null
+    nameUser: string | null
+    emailUser: string | null
+    setDataUser: (name: string, email: string) => void
     setRutaUser: (ruta: string) => void
     threeAnswersUser: Record<number,number> | null
     setThreeAnswersUser: (answerUser:Record<number,number>) => void
@@ -12,17 +15,32 @@ interface State {
     fetchPatterns: () => Promise<void>
     setRecommendation: (matchRecomendacion: ObjectOfRecommendation) => void
     recomendacion: ObjectOfRecommendation | null
+    sendRecomendation: boolean | null
+    changeSendRecomendacionToTrue: () => void
+    changeSendRecomendacionToFalse: () => void
     defaultProduct: ObjectOfRecommendation | null
 }
 
 export const UseRecomendacionesStore = create<State>()(persist((set,get) => {
     return {
         rutaUser: null,
+        nameUser: null,
+        emailUser: null,
+        sendRecomendation: null,
         recomendacion: null,
         defaultProduct: null,
         threeAnswersUser: null,
+        setDataUser(name, email) {
+            set({nameUser: name, emailUser: email})
+        },
         setRutaUser(ruta) {
             set({ rutaUser: ruta })
+        },
+        changeSendRecomendacionToTrue() {
+            set({sendRecomendation: true})
+        },
+        changeSendRecomendacionToFalse() {
+            set({sendRecomendation:false})
         },
         fetchPatterns: async () => {
             const { rutaUser, threeAnswersUser } = get()
@@ -39,7 +57,7 @@ export const UseRecomendacionesStore = create<State>()(persist((set,get) => {
             set({ threeAnswersUser: answerUser })
         },
         reset: () => {
-            set({ threeAnswersUser: null, recomendacion: null })
+            set({ threeAnswersUser: null, recomendacion: null, sendRecomendation: null, nameUser: null, emailUser: null, rutaUser: null })
         },
         
     }

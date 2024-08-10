@@ -38,6 +38,7 @@ const FirstQuestionElection = ({ info } : {info: QuestionType }) => {
                                 </button>
                             )
                         })}
+                        
                     </section>
                 </section>
             </div>

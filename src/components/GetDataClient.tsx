@@ -2,42 +2,41 @@ import { useRef, useState } from "react"
 import '/public/styles/dataClient.css'
 import { EmailIcon } from "../icons"
 import { toast, Toaster } from 'sonner'
-import { orderDataAndSetData } from "../services/getQuestionsAndData"
 import { UseRecomendacionesStore } from "../store/recomendaciones"
-import emailjs from '@emailjs/browser';
-import { searchThreeAnswers } from "../hooks/useQuestionData"
-import { Question } from "../types"
+import { orderAnswersUser } from "../hooks/useQuestionData"
+import Loader from "./Loader"
+
 
 const GetDataClient = () => {
     const form = useRef<HTMLFormElement>(null);
-    const [answersUserOrdered, setAnswersUserOrdered] = useState<Record<number,number> | null>(null)
     const setAnswersUser = UseRecomendacionesStore(state => state.setThreeAnswersUser)
+    const changeToTrue = UseRecomendacionesStore(state => state.changeSendRecomendacionToTrue)
+    const setDataUSer = UseRecomendacionesStore(state => state.setDataUser)
     const [dataEmail,setDataEmail] = useState<string>()
     const [dataName, setDataName] = useState<string>()
-    const threeAnswersUser: Question[] = searchThreeAnswers()
+    const threeAnswersUser: Record<number,number> | any = orderAnswersUser()
+    const [loader,setLoader] = useState <boolean> (false)
     
+
     const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault()
-        let keyAndValuesUser: Record<number,number> = orderDataAndSetData(threeAnswersUser)
-        setAnswersUserOrdered(keyAndValuesUser)
-
-        
         if (!dataEmail || !dataName) {
             toast.error("Faltan datos por enviar")
             return
         }
-    
+
+
+        setDataUSer(dataName,dataEmail)
+        setLoader(true)
+        
         try {
-            if (form.current) {
-                const res = await emailjs.sendForm(import.meta.env.VITE_EMAILJS_SERVICE_ID , import.meta.env.VITE_EMAILJS_TEMPLATE_ID, form.current, {
-                    publicKey: import.meta.env.VITE_EMAILJS_PUBLIC,
-                })
-                if(res.status === 200){
-                    if(answersUserOrdered && keyAndValuesUser){
-                        setAnswersUser(answersUserOrdered)
-                    }
-                }
-            } 
+        if (form.current) {
+            setTimeout(()=>{
+                setLoader(false)
+                changeToTrue()
+                setAnswersUser(threeAnswersUser)
+            },2500)
+        } 
         } catch (error: any) {
             if(error.status === 422){
                 toast.error('Envía un formato correcto de email.')
@@ -48,35 +47,51 @@ const GetDataClient = () => {
     }
 
     return (
-        <section className="send_email">
-            <div>
-                <div className="sub_header">
-                    <h3>¡Gracias!</h3>
-                    <h3>Estamos analizando tus respuestas</h3>
-                </div>
-                <div className="sub_header">
-                    <h3>Ahora, ¿te gustaría recibir un descuento?</h3>
-                    <h3>Recibirás 10% de descuento en tu próxima compra</h3>
-                </div>
-            </div>
-
-            <div className="popup">
-                <form className="form" onSubmit={handleSubmit} ref={form}>
-                    <div className="form_header">
-                        <div className="note">
-                            <label className="title">Obtener descuento</label>
+        <>  
+        
+            {!loader &&
+                <section className="send_email">
+                    <div>
+                        <div className="sub_header">
+                            <h3>¡Grazie!</h3>
+                            <h3>Stiamo analizzando le tue risposte</h3>
                         </div>
-                        <div className="icon">
-                            <EmailIcon />
+                        <div className="sub_header">
+                            <h3>Ora, vorresti ricevere uno sconto?</h3>
+                            <h3>Riceverai uno sconto del 10% sul tuo prossimo acquisto</h3>
                         </div>
                     </div>
-                    <input onChange={(e)=> setDataEmail(e.target.value)} placeholder="Enter your e-mail" title="Enter your e-mail" name="user_email" type="email" className="input_field" />
-                    <input onChange={(e)=> setDataName(e.target.value)} placeholder="Enter your name" title="Enter your e-mail" name="to_name" type="text" className="input_field" />
-                    <button type="submit" className="submit">Ver resultado</button>
-                </form>
-            </div>
-            <Toaster richColors />
-        </section>
+
+                    <div className="popup">
+                        <form className="form" onSubmit={handleSubmit} ref={form}>
+                            <div className="form_header">
+                                <div className="note">
+                                    <h1 className="title">Ottieni sconto</h1>
+                                </div>
+                                <div className="icon">
+                                    <EmailIcon />
+                                </div>
+                            </div>
+                            <div>
+                                <span className="span_proveer">
+                                    Forniscici la tua email e il tuo nome per inviarti un buono sconto monouso
+                                </span>
+                            </div>
+                            <label htmlFor="email" style={{width:"100%"}}>
+                                <input id="email" onChange={(e)=> setDataEmail(e.target.value)} placeholder="Enter your e-mail" title="Enter your e-mail" name="user_email" type="email" autoComplete="true" className="input_field" />
+                            </label>
+                            <label htmlFor="name"  style={{width:"100%"}}>
+                                <input autoComplete="true" id="name" onChange={(e)=> setDataName(e.target.value)} placeholder="Enter your name" title="Enter your e-mail" name="to_name" type="text" className="input_field" />
+
+                            </label>
+                            <button type="submit" className="submit">vedere il risultato</button>
+                        </form>
+                    </div>
+                    <Toaster richColors />
+                </section>
+            }   
+            {loader && <Loader/>}
+        </>
     )
 }
 
