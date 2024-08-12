@@ -4,7 +4,7 @@ import { persist } from 'zustand/middleware'
 import { getAllquestions, getFirstQuestion } from '../services/getQuestionsAndData'
 
 interface State {
-    questions: Question[]
+    questions: Question[] 
     firstQuestion: Question | null
     firstElectionUser: string | null
     threeAnswersUser: Record<number,number> | null

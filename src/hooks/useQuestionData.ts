@@ -17,17 +17,17 @@ export const orderAnswersUser = () =>{
     if(userSelected === 'styling'){
         questionsAndAnswersUser = questionsAndAnswersUser.slice(0,3)
         threeAnswersUser = orderDataAndSetData(questionsAndAnswersUser)
-        return  threeAnswersUser 
+        return threeAnswersUser 
     }
     if(userSelected === 'trattamento'){
         questionsAndAnswersUser = questionsAndAnswersUser.slice(3,6)
         threeAnswersUser = orderDataAndSetData(questionsAndAnswersUser)
-        return  threeAnswersUser 
+        return threeAnswersUser 
     }
     if(userSelected === 'lavaggio'){
         questionsAndAnswersUser = questionsAndAnswersUser.slice(5,8)
         threeAnswersUser = orderDataAndSetData(questionsAndAnswersUser)
-        return  threeAnswersUser 
+        return threeAnswersUser 
     }
 }
 
@@ -49,4 +49,3 @@ export const consejos = () => {
     }
     return null
 }
-

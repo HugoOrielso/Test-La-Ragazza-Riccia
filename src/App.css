@@ -36,7 +36,11 @@
 .main-title{
   color:#EA287A;
   text-wrap: balance;
+  font-size: 3em;
+  margin: 0;
+  font-family: "Great Vibes", cursive;
 }
+
 
 .section_test{
   display: flex;

@@ -11,7 +11,7 @@
       {
         "id":2,
         "question": "QUANTI CAPELLI HAI?",
-        "explication": "(per rispondere a questa domanda, prova a guardare il tuo cuoio capelluto allo specchio, riesci a vedere lapelle con facilità o ci sono anti capelli a ricoprirla?)",
+        "explication": "Per rispondere a questa domanda, prova a guardare il tuo cuoio capelluto allo specchio, riesci a vedere lapelle con facilità o ci sono anti capelli a ricoprirla?",
         "answers": [
           "Molti",
           "Pochi o medi"
@@ -20,7 +20,7 @@
       {
         "id":3,
         "question": "AL TATTO SONO RUVIDI?",
-        "explication": "(per rispondere a questa domanda prendi un singolo capello e toccalo usando indice e pollice, sono ruvidi o morbidi al tatto?",
+        "explication": "Per rispondere a questa domanda prendi un singolo capello e toccalo usando indice e pollice, sono ruvidi o morbidi al tatto?",
         "answers": [
           "Si, sono ruvidi",
           "No, sono morbidi"
@@ -37,7 +37,7 @@
       {
         "id":5,
         "question": "I TUOI CAPELLI TRATTENGONO  L’ACQUA?",
-        "explication": "(per rispondere a questa domanda, pensa al momento in cui inizi il lavaggio si bagnano facilmente o impieghi un pò prima che sia ben bagnati?",
+        "explication": "Per rispondere a questa domanda, pensa al momento in cui inizi il lavaggio si bagnano facilmente o impieghi un pò prima che sia ben bagnati?",
         "answers": [
           "Fanno fatica a bagnarsi",
           "Si bagnano facilmente"

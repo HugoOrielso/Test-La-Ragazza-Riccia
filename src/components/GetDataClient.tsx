@@ -9,46 +9,50 @@ import Loader from "./Loader"
 
 const GetDataClient = () => {
     const form = useRef<HTMLFormElement>(null);
+    const threeAnswersUser: Record<number,number> | any = orderAnswersUser()
+    const patternsfromStore = UseRecomendacionesStore(state=> state.fetchPatterns)
     const setAnswersUser = UseRecomendacionesStore(state => state.setThreeAnswersUser)
     const changeToTrue = UseRecomendacionesStore(state => state.changeSendRecomendacionToTrue)
     const setDataUSer = UseRecomendacionesStore(state => state.setDataUser)
     const [dataEmail,setDataEmail] = useState<string>()
     const [dataName, setDataName] = useState<string>()
-    const threeAnswersUser: Record<number,number> | any = orderAnswersUser()
     const [loader,setLoader] = useState <boolean> (false)
     
+    const getData = () =>{
+        patternsfromStore()
+    }
+    
 
-    const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    const handleSubmit =  (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault()
+        setAnswersUser(threeAnswersUser)
         if (!dataEmail || !dataName) {
-            toast.error("Faltan datos por enviar")
+            toast.error("Non ci sono dati da inviare.")
             return
         }
 
-
-        setDataUSer(dataName,dataEmail)
         setLoader(true)
         
         try {
-        if (form.current) {
-            setTimeout(()=>{
+            getData()
+            if (form.current) {
+                setTimeout(()=>{
                 setLoader(false)
                 changeToTrue()
-                setAnswersUser(threeAnswersUser)
+                setDataUSer(dataName,dataEmail)
             },2500)
         } 
         } catch (error: any) {
             if(error.status === 422){
-                toast.error('Envía un formato correcto de email.')
+                toast.error('Invia un formato email corretto.')
                 return
             }
-            toast.error("Ocurrió un error enviando la información, intenta de nuevo.")
+            toast.error("Si è verificato un errore durante l'invio delle informazioni, riprova.")
         }
     }
 
     return (
         <>  
-        
             {!loader &&
                 <section className="send_email">
                     <div>
@@ -61,7 +65,6 @@ const GetDataClient = () => {
                             <h3>Riceverai uno sconto del 10% sul tuo prossimo acquisto</h3>
                         </div>
                     </div>
-
                     <div className="popup">
                         <form className="form" onSubmit={handleSubmit} ref={form}>
                             <div className="form_header">
@@ -78,10 +81,10 @@ const GetDataClient = () => {
                                 </span>
                             </div>
                             <label htmlFor="email" style={{width:"100%"}}>
-                                <input id="email" onChange={(e)=> setDataEmail(e.target.value)} placeholder="Enter your e-mail" title="Enter your e-mail" name="user_email" type="email" autoComplete="true" className="input_field" />
+                                <input id="email" onChange={(e)=> setDataEmail(e.target.value)} placeholder="Enter your e-mail" title="Enter your e-mail" name="user_email" type="email" autoComplete="true" className="input_field" required/>
                             </label>
                             <label htmlFor="name"  style={{width:"100%"}}>
-                                <input autoComplete="true" id="name" onChange={(e)=> setDataName(e.target.value)} placeholder="Enter your name" title="Enter your e-mail" name="to_name" type="text" className="input_field" />
+                                <input autoComplete="true" id="name" onChange={(e)=> setDataName(e.target.value)} placeholder="Enter your name" title="Enter your e-mail" name="to_name" type="text" className="input_field" required/>
 
                             </label>
                             <button type="submit" className="submit">vedere il risultato</button>

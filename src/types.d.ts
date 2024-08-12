@@ -6,26 +6,18 @@ export interface Question {
   userSelectedAnswer?: number;
 }
 
-export interface DefaultValueRecomendation {
-  recommendation: RecommendationDos[];
-}
-
 interface Response {
   pattern: Pattern;
   recommendation: Recommendation;
 }
 
 export interface Recommendation {
-  rutinas: string[];
-  productos: Producto[];
-}
-export interface RecommendationDos {
   rutina: string;
   consejo?: string;
   productos: Producto[];
 }
 
-export interface ObjectOfRecommendation{
+export interface PatternAndRecomendation{
   pattern: Pattern;
   recommendation: RecommendationDos[];
 }

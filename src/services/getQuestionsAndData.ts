@@ -68,6 +68,3 @@ export const orderDataAndSetData = (threeMainQuestionsUser: Question[]) => {
     
     return userAnswers;
 }
-
-
-

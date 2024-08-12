@@ -21,13 +21,16 @@
 .indexQuestion{
     color: white;
     display: flex;
-    width: 1em;
-    height: 1em;
+    width: 1.5em;
+    height: 1.5em;
+    font-size: 13px;
+    text-align: center;
+    font-weight: 600;
     align-items: center;
     justify-content: center;
     color: rgb(0, 0, 0);
     border: 1px solid rgba(144, 202, 249, 0.5);
-    padding: .2em;
+    padding: .8em;
     cursor: pointer;
     border-radius: 50%;
     transition: all .3s ease;

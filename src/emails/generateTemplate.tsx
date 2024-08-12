@@ -1,19 +1,28 @@
 import { render } from "@react-email/components";
 import { UseRecomendacionesStore } from "../store/recomendaciones";
-import { SendEmail } from "./SendEmail";
 import { consejos } from "../hooks/useQuestionData";
+import { Recommendation } from "../types";
+import { SendEmail } from "./SendEmail";
 
 
 
 const generateTemplate = () => {
-    const name = UseRecomendacionesStore(state=>state.nameUser)
+    const consejo = consejos()
     const defaultProduct = UseRecomendacionesStore(state=> state.defaultProduct)
     const product = UseRecomendacionesStore(state => state.recomendacion)
-    const consejo = consejos()
+    const combinedRecommendations: Recommendation[] = [...defaultProduct?.recommendation || [], ...product?.recommendation || []];
     
-    if (name && (defaultProduct || product)){
-        return (render(<SendEmail name={name} defaultProduct={defaultProduct} productRecomended={product} consejo={consejo}/>,{pretty:true} ))
+    if (defaultProduct || product) {
+        return render(
+            <SendEmail 
+                recomendacion={combinedRecommendations} 
+                consejo={consejo} 
+            />,
+            { pretty: true }
+        );
     }
+
+    return null;
 }
 
 export default generateTemplate

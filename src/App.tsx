@@ -11,9 +11,9 @@ import { FirstQuestion } from './components/FirstElection'
 
 function App() {
   const questions = UseQuestionsStore(state => state.questions)
-  const threeAnswersUser = UseRecomendacionesStore(state => state.threeAnswersUser)
   const { unanswered }  = useQuestionData()
   const firstQuestion = UseQuestionsStore(state => state.firstQuestion)
+  const email = UseRecomendacionesStore(state=> state.emailUser)
   
     
   return (
@@ -29,8 +29,8 @@ function App() {
           {questions.length === 0 && !firstQuestion && <Start />}
           {firstQuestion && questions.length == 0 && <FirstQuestion/>} 
           {( unanswered > 0 && questions.length > 0 ) && <Test /> } 
-          { unanswered === 0 &&  questions.length > 0 && !threeAnswersUser  && <GetDataClient/>}
-          {( unanswered === 0  && threeAnswersUser)  && <MostrarResultados/>}
+          { unanswered === 0 &&  questions.length > 0 && !email  && <GetDataClient/>}
+          {( unanswered === 0  && email)  && <MostrarResultados/>}
         </section>
       </main>
     </>

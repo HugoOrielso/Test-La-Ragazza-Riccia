@@ -1,5 +1,5 @@
 import { create } from 'zustand'
-import { ObjectOfRecommendation } from '../types'
+import { PatternAndRecomendation } from '../types'
 import { persist } from 'zustand/middleware'
 import { findMatchingRecommendation, getPatternsAndSetRecomendation } from '../services/getQuestionsAndData'
 
@@ -13,12 +13,12 @@ interface State {
     setThreeAnswersUser: (answerUser:Record<number,number>) => void
     reset: () => void
     fetchPatterns: () => Promise<void>
-    setRecommendation: (matchRecomendacion: ObjectOfRecommendation) => void
-    recomendacion: ObjectOfRecommendation | null
+    setRecommendation: (matchRecomendacion: PatternAndRecomendation) => void
+    recomendacion: PatternAndRecomendation | null
     sendRecomendation: boolean | null
     changeSendRecomendacionToTrue: () => void
     changeSendRecomendacionToFalse: () => void
-    defaultProduct: ObjectOfRecommendation | null
+    defaultProduct: PatternAndRecomendation | null
 }
 
 export const UseRecomendacionesStore = create<State>()(persist((set,get) => {
@@ -37,7 +37,7 @@ export const UseRecomendacionesStore = create<State>()(persist((set,get) => {
             set({ rutaUser: ruta })
         },
         changeSendRecomendacionToTrue() {
-            set({sendRecomendation: true})
+            set({ sendRecomendation: true })
         },
         changeSendRecomendacionToFalse() {
             set({sendRecomendation:false})
@@ -46,7 +46,7 @@ export const UseRecomendacionesStore = create<State>()(persist((set,get) => {
             const { rutaUser, threeAnswersUser } = get()
             if(rutaUser && threeAnswersUser){
                 const allPatterns: any = await getPatternsAndSetRecomendation(rutaUser)
-                let match:ObjectOfRecommendation = findMatchingRecommendation(threeAnswersUser,allPatterns.responses)
+                let match:PatternAndRecomendation = findMatchingRecommendation(threeAnswersUser,allPatterns.responses)
                 set({ recomendacion: match, defaultProduct: allPatterns.defaultProduct })
             }
         },
@@ -57,7 +57,7 @@ export const UseRecomendacionesStore = create<State>()(persist((set,get) => {
             set({ threeAnswersUser: answerUser })
         },
         reset: () => {
-            set({ threeAnswersUser: null, recomendacion: null, sendRecomendation: null, nameUser: null, emailUser: null, rutaUser: null })
+            set({ threeAnswersUser: null, recomendacion: null, sendRecomendation: null, nameUser: null, emailUser: null, rutaUser: null, defaultProduct: null})
         },
         
     }

@@ -32,9 +32,13 @@ const Question = ({ info } : {info: QuestionType }) => {
             <div className="card_test">
                 <section className="container_info" >
                     <section className={`header_question`}>
-                        <h5 className={`question ${fadeClass}`}> {info.question} </h5> 
-                        <div>
+                        <div className="question_number">
+                            <h5 className={`question ${fadeClass}`}> {info.question} </h5>
                             <IndicadorQuestion />
+
+                        </div>
+                            {info.explication && <span className="span_explanation_question"> {info.explication} </span> }                         
+                        <div>
                         </div>
                     </section>
                     <section className={`card_container_answers`}>
@@ -54,7 +58,6 @@ const Question = ({ info } : {info: QuestionType }) => {
     )
 }
 
-
 export const Test = () => {
     const questions = UseQuestionsStore(state => state.questions)
     const currentQuestion = UseQuestionsStore(state => state.currentQuestion)
@@ -66,5 +69,3 @@ export const Test = () => {
         </>
     )
 }
-
-

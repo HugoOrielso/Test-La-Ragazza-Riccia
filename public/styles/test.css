@@ -5,18 +5,20 @@
     flex-direction: column;
     justify-content: space-between;
     border: 1px solid rgba(0, 0, 0, .08);
-    height: 25em;
+    height: 30em;
     gap: 8px;
     width: 100%;
     max-width: 600px;
     border-radius: 5px;
     padding: .5em;
+    min-width: 650px;
     box-shadow: 0 0 5px #202945;
-    min-width: 600px;
 }
 
 .header_question{
     display: flex;
+    flex-flow: row nowrap;
+    flex-direction: column;
     align-items: start;
     justify-content: space-between;
     margin-bottom: .5em;
@@ -24,6 +26,24 @@
     gap: 2px;
     min-height: 75px;
     overflow: hidden;
+}
+
+.card_test h5{
+    font-size: 15px;
+}
+
+.span_explanation_question{
+    text-align: start;
+    display: flex;
+    font-size: 14px;
+}
+
+.question_number{
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    width: 100%;
+    gap: 1em;
 }
 
 .question{
@@ -41,7 +61,6 @@
 
 .question.fade-in{
     display: flex;
-    font-size: 1.5em;
     text-align: left;
     margin: 0;
     transform: translate(0%);
@@ -76,7 +95,6 @@
     color: white;
     font-weight: 500;
     width: 100%;
-    font-size: 14px;
     overflow: hidden;
     border-bottom: .5px #535864 solid;
     transition: all .2s ease;
@@ -90,6 +108,7 @@
     filter: blur(10px);
     display: flex;
     width: 100%;
+    font-size: 15px;
     transform: translate(110%);
     transition: all .5s ease-in-out;
 }
@@ -129,6 +148,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 100%;
     transition: all 1s ease;
 }
 
@@ -213,7 +233,7 @@
 
 @media screen and (max-width:650px) {
     .card_test{
-        min-width: 500px;
+        min-width: 0px;
     }
 }
 
@@ -224,32 +244,9 @@
         min-height: 100px;
     }
     .card_test{
-        min-width: 440px;
+        /* min-width: 440px; */
     }
 }
 
-@media screen and (max-width:480px) {
-    
-    .card_test{
-        min-width: 400px;
-    }
-}
 
-@media screen and (max-width:440px) {
-    .question{
-        font-size: 18px;
-    }
-    .question.question.fade-in{
-        font-size: 18px;
-    }
-    .card_test{
-        min-width: 250px;
-    }
-}
-
-@media screen and (max-width:400px) {
-    .card_test h5{
-        font-size: 1em;
-    }
-}
 
