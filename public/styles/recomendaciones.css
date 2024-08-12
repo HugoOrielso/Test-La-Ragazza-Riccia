@@ -15,6 +15,10 @@
     align-items: center;
     justify-content: center;
     width: 100%;
+    & h2{
+        margin: 0;
+        text-align: start;
+    }
 }
 
 .container-consejos{
@@ -39,11 +43,10 @@
     padding: 1em;
     border-radius: 10px;
     background-color: #202945;
-}
-
-.consejo h2{
-    margin: 0;
-    color: #E92176;
+    & h2{
+        margin: 0;
+        color: #E92176;
+    }
 }
 
 .p-consejo{
@@ -51,11 +54,6 @@
     text-align: start;
     margin: 0;
     color: white;
-}
-
-.recomendacion h2{
-    margin: 0;
-    text-align: start;
 }
 
 .layout_product{
@@ -71,13 +69,37 @@
     justify-content: space-between;
     height: 100%;
     flex-direction: column;
-}
+    & img{
+        max-width: 250px;
+        object-fit: cover;
+        aspect-ratio: auto 3/4;  
+        width: 100%;
+    }
 
-.product img{
-    max-width: 250px;
-    object-fit: cover;
-    aspect-ratio: auto 3/4;  
-    width: 100%;
+    & h3{
+        font-size: 20px;
+        font-weight: 600;
+        margin: 0;
+        color: #EA287A;
+    }
+
+    & h4{
+        color: #202945;
+        margin: 0;
+        font-size: 22px;
+        font-weight: 700;
+    }
+
+    & a{
+        font-size: 16px;
+        font-weight: 600;
+        line-height: 21px;
+        background-color: #EA287A;
+        color: white;
+        padding: 10px 16px;
+        border-radius: 10px;
+        text-decoration: none;
+    }
 }
 
 .info_product{
@@ -85,31 +107,6 @@
     text-align: start;
     flex-direction: column;
     gap: 8px;
-}
-
-.product h3{
-    font-size: 20px;
-    font-weight: 600;
-    margin: 0;
-    color: #EA287A;
-}
-
-.product h4{
-    color: #202945;
-    margin: 0;
-    font-size: 22px;
-    font-weight: 700;
-}
-
-.product a{
-    font-size: 16px;
-    font-weight: 600;
-    line-height: 21px;
-    background-color: #EA287A;
-    color: white;
-    padding: 10px 16px;
-    border-radius: 10px;
-    text-decoration: none;
 }
 
 .default_product{
@@ -131,24 +128,28 @@
 }
 
 @media screen and (max-width:450px) {
-    .product img{
-        object-fit: cover;
-        aspect-ratio: 2/3 auto;
-        max-width: 150px;
+    .product{
+        & img{
+            object-fit: cover;
+            aspect-ratio: 2/3 auto;
+            max-width: 150px;
+        }
+
+        & h3{
+            font-size: 15px;
+        }
+
+        & h4{
+            font-size: 16px;
+        }
     }
 
-    .product h3{
-        font-size: 15px;
-    }
-    
-    .product h4{
-        font-size: 16px;
+    .consejo{
+        & h2{
+            font-size: 15px;
+        }
     }
 
-    .consejo h2{
-        font-size: 15px;
-    }
-    
     .p-consejo{
         font-size: 11px;
     }
@@ -163,13 +164,18 @@
     .recomendacion h2{
         font-size: 18px;
     }
-    .product img{
-        max-width: 150px;
-    }
-    .product h3{
-        font-size: 15px;
-    }
-    .product h4{
-        font-size: 16px;
+
+    .product{
+        & img{
+            max-width: 150px;
+        }
+
+        & h3{
+            font-size: 15px;
+        }
+
+        & h4{
+            font-size: 16px;
+        }
     }
 }

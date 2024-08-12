@@ -13,6 +13,10 @@
     padding: .5em;
     min-width: 650px;
     box-shadow: 0 0 5px #202945;
+
+    & h5{
+        font-size: 15px;
+    }
 }
 
 .header_question{
@@ -26,10 +30,6 @@
     gap: 2px;
     min-height: 75px;
     overflow: hidden;
-}
-
-.card_test h5{
-    font-size: 15px;
 }
 
 .span_explanation_question{
@@ -56,18 +56,19 @@
     width: 100%;
     transition: all .5s ease-in-out;
     transform: translate(-110%);
-    overflow: hidden;
+    overflow: hidden; 
+
+    &.fade-in{
+        display: flex;
+        text-align: left;
+        margin: 0;
+        transform: translate(0%);
+        filter: blur(0px);
+        color: #E92176;
+        transition: all .5s ease;
+    }
 }
 
-.question.fade-in{
-    display: flex;
-    text-align: left;
-    margin: 0;
-    transform: translate(0%);
-    filter: blur(0px);
-    color: #E92176;
-    transition: all .5s ease;
-}
 
 .container_info{
     width: 100%;
@@ -81,28 +82,29 @@
     border-radius: 5px;
     background-color: #202945;
     border: 1px solid rgba(0, 0, 0, .08);
-
     transition: all .2s ease;
+
+    & button{
+        text-align: left;
+        padding: 10px;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+        color: white;
+        font-weight: 500;
+        width: 100%;
+        overflow: hidden;
+        border-bottom: .5px #535864 solid;
+        transition: all .2s ease;
+    }
+
+    & button:hover{
+        background-color: #41548c;
+    }
 }
 
 
-.card_container_answers button{
-    text-align: left;
-    padding: 10px;
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-    color: white;
-    font-weight: 500;
-    width: 100%;
-    overflow: hidden;
-    border-bottom: .5px #535864 solid;
-    transition: all .2s ease;
-}
 
-.card_container_answers button:hover{
-    background-color: #41548c;
-}
 
 .span_answer{
     filter: blur(10px);
@@ -111,14 +113,14 @@
     font-size: 15px;
     transform: translate(110%);
     transition: all .5s ease-in-out;
+
+    &.fade-in{
+        filter: blur(0px);
+        transform: translate(0%);
+        transition: all .5s ease;
+    }
 }
 
-.span_answer.fade-in{
-    filter: blur(0px);
-    transform: translate(0%);
-    transition: all .5s ease;
-
-}
 
 .controles{
     display: flex;
@@ -131,17 +133,23 @@
     display: flex;
     align-items: start;
     justify-content: start;
+
+    & p{
+        margin: 0;
+    }
 }
 
-.indicadores p{
-    margin: 0;
-}
 
 .controls_arrows{
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 1em;
+
+    & p{
+        display: flex;
+        text-align: center;
+    }
 }
 
 .container_test{
@@ -153,10 +161,6 @@
 }
 
 
-.controls_arrows p{
-    display: flex;
-    text-align: center;
-}
 
 .button_arrow{
     display: flex;
@@ -170,16 +174,15 @@
     transition: all .5s ease;
     background: #202945;
     color: white;
-}
 
-.button_arrow:hover{
-    transform: scale(.95);
-}
+    &:hover{
+        transform: scale(.95);
+    }
 
-.button_arrow:active{
-    transform: scale(1.15);
+    &:active{
+        transform: scale(1.15);
+    }
 }
-
 
 .container-btn-repetir{
     display: flex;
@@ -202,6 +205,14 @@
     background: #ff362b34;
     border-radius: 20px;
     cursor: pointer;
+
+    &:hover{
+        background: #ff362b52;
+    }
+
+    &:hover .svg-icon{
+        animation: spin 2s linear infinite;
+    }
 }
   
 .lable {
@@ -211,15 +222,20 @@
     font-family: sans-serif;
     letter-spacing: 1px;
 }
-  
-.button:hover {
-    background: #ff362b52;
+
+@media screen and (max-width:650px) {
+    .card_test{
+        min-width: 0px;
+    }
 }
-  
-.button:hover .svg-icon {
-    animation: spin 2s linear infinite;
+
+@media screen and (max-width:550px) {
+    .header_question{
+        min-height: 100px;
+    }
 }
-  
+
+
 @keyframes spin {
     0% {
       transform: rotate(0deg);
@@ -231,22 +247,6 @@
 }
 
 
-@media screen and (max-width:650px) {
-    .card_test{
-        min-width: 0px;
-    }
-}
-
-
-
-@media screen and (max-width:550px) {
-    .header_question{
-        min-height: 100px;
-    }
-    .card_test{
-        /* min-width: 440px; */
-    }
-}
 
 
 
