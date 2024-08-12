@@ -1,4 +1,5 @@
 import { UseRecomendacionesStore } from "../store/recomendaciones"
+import { Producto } from "../types"
 
 export const GenerateDefatultProduct = () =>{
   const defaultValues = UseRecomendacionesStore(state=> state.defaultProduct)
@@ -19,7 +20,7 @@ export const GenerateDefatultProduct = () =>{
                 }
                 <div className="layout_product">
                   {
-                    item.productos.map((producto,_index)=>{
+                    item.productos.map((producto: Producto)=>{
                       return(
                         <div className="product" key={crypto.randomUUID()}>
                           <img src={producto.urlImage} alt={producto.nombre} />
@@ -62,7 +63,7 @@ export const GenerateProductsRecomended = () =>{
                   </h2>
                   <div className="layout_product">
                     {
-                      recomend.productos.map((item,_index)=>{
+                      recomend.productos.map((item: Producto)=>{
                         return(
                           <div className="product" key={crypto.randomUUID()}>
                             <div>
