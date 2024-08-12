@@ -31,6 +31,8 @@ const MostrarResultados = () => {
         toast.success("Ricciolutta abbiamo inviato il tuo buono sconto 🤩, controlla la tua casella di posta.")
       }
     } catch (error) {
+      console.log(error);
+      
       toast.error("Si è verificato un errore durante l'invio della tua email 😒, riprova più tardi .")
     }
   }
