@@ -23,7 +23,7 @@ export const FooterQuestions = () =>{
     return(
         <footer className="footerQuestions">
             <strong>
-                {` ${unanswered} ❓ sin responder`}
+                {` ${unanswered} ❓ senza rispondere`}
             </strong>
             <section className="controls_pagination">
                 <ArrowLeft currentQuestion={currentQuestion} />

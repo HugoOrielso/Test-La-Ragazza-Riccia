@@ -27,9 +27,12 @@ const Question = ({ info } : {info: QuestionType }) => {
         }, 350);
         return () => clearTimeout(timeoutId);
     }, [currentQuestion]);
+
+    const witdhGreen = window.innerWidth
+    
     return (
         <section className={`container_test `}>
-            <div className="card_test">
+            <div className="card_test" style={{minWidth: witdhGreen < 700 ? `${witdhGreen - 50}px`: "650px" }}>
                 <section className="container_info" >
                     <section className={`header_question`}>
                         <div className="question_number">
@@ -37,8 +40,8 @@ const Question = ({ info } : {info: QuestionType }) => {
                             <IndicadorQuestion />
 
                         </div>
-                            {info.explication && <span className="span_explanation_question"> {info.explication} </span> }                         
-                        <div>
+                        <div style={{overflow: "hidden"}}>
+                            {info.explication && <span className={`span_explanation_question ${fadeClass}`}> {info.explication} </span> }                         
                         </div>
                     </section>
                     <section className={`card_container_answers`}>
