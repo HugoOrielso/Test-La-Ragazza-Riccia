@@ -12,6 +12,7 @@ const getBackGroundColor = (info: QuestionType, index: number, ) =>{
 }
 
 const Question = ({ info } : {info: QuestionType }) => {
+    let witdhGreen: number
     const selectAnswer = UseQuestionsStore(state => state.selectAnswer)
     const currentQuestion = UseQuestionsStore(state => state.currentQuestion)
     const goNextQuestion = UseQuestionsStore(state => state.goNextQuestion)
@@ -28,11 +29,17 @@ const Question = ({ info } : {info: QuestionType }) => {
         return () => clearTimeout(timeoutId);
     }, [currentQuestion]);
 
-    const witdhGreen = window.innerWidth
+    window.addEventListener('resize',()=>{
+        witdhGreen = window.innerWidth
+    })
+    
+    witdhGreen = window.innerWidth
+
+    
     
     return (
         <section className={`container_test `}>
-            <div className="card_test" style={{minWidth: witdhGreen < 700 ? `${witdhGreen - 50}px`: "650px" }}>
+            <div className="card_test" style={{minWidth: witdhGreen < 700 ? `${witdhGreen - 50}px`: "650px",  }}>
                 <section className="container_info" >
                     <section className={`header_question`}>
                         <div className="question_number">
@@ -48,7 +55,7 @@ const Question = ({ info } : {info: QuestionType }) => {
                         {info.answers.map((answer,i)=>{
                             let borderBottom = info.answers.length == (i + 1) ? 'none': ""
                             return(
-                                <button className={`${fadeClass}`} onClick={handleClick(i)} key={i} style={{border: borderBottom, backgroundColor: getBackGroundColor(info,i) }}>
+                                <button onClick={handleClick(i)} key={i} style={{border: borderBottom, backgroundColor: getBackGroundColor(info,i) }}>
                                     <span className={`span_answer ${fadeClass}`}>{answer}</span>
                                 </button>
                             )
