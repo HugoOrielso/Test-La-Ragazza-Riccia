@@ -23,7 +23,8 @@ export const FooterQuestions = () =>{
     return(
         <footer className="footerQuestions">
             <strong>
-                {` ${unanswered} ❓ senza rispondere`}
+                {`Domande senza risposta: `}
+                <span style={{color: "#FF342B"}}> {unanswered} </span>
             </strong>
             <section className="controls_pagination">
                 <ArrowLeft currentQuestion={currentQuestion} />

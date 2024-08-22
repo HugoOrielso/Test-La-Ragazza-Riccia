@@ -12,6 +12,7 @@ export const SendEmail = ({recomendacion,consejo}:{recomendacion: Recommendation
                 <Container className='border border-solid border-[#eaeaea] rounded my-[40px] mx-auto p-[20px] max-w-[465px] shadow-lg'>
                     <section>
                         <Container>
+                            <h2 className='text-lg text-[#202945] m-0'>Prodotti Consigliatti:</h2>
                             {
                                 recomendacion.map((item,index)=>{
                                     return(

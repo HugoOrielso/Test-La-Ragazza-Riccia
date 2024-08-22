@@ -6,13 +6,11 @@
 .main_logo{
   height: 4em;
   transition: all .25s ease;
-  transform: rotate(6deg)
 }
 
 .main_logo:hover {
   filter: drop-shadow(0 0 2em #ff408f);
   transition: all .25s ease;
-
 }
 
 .main_logo:hover {
@@ -33,11 +31,6 @@
   filter: drop-shadow(0 0 2em #ff89ba);
 }
 
-.main-title{
-  color:#EA287A;
-  text-wrap: balance;
-  margin: 0;
-}
 
 
 .section_test{
@@ -55,6 +48,24 @@
   align-items: center;
   gap: 1em;
   justify-content: center;
+  margin-bottom: 1em;
+
+
+  & .main-title{
+    color:#EA287A;
+    text-wrap: balance;
+    font-size: 3em;
+    margin: 0;
+  }
+
+  & .artukge_title{
+    font-family: "Artukge", sans-serif;
+    color:#EA287A;
+    font-size: 4em;
+    text-wrap: balance;
+    margin: 0;
+  }
+  
 }
 
 @media screen and (max-width:470px) {

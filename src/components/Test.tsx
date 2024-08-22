@@ -4,6 +4,7 @@ import { type Question as QuestionType} from "../types"
 import { FooterQuestions } from "./FooterQuestions"
 import '/public/styles/test.css'
 import { IndicadorQuestion } from "../Arrows"
+import ResetTest from "./ResetTest"
 
 const getBackGroundColor = (info: QuestionType, index: number, ) =>{
     const { userSelectedAnswer } = info
@@ -32,13 +33,9 @@ const Question = ({ info } : {info: QuestionType }) => {
     window.addEventListener('resize',()=>{
         witdhGreen = window.innerWidth
     })
-    
     witdhGreen = window.innerWidth
-
-    
-    
     return (
-        <section className={`container_test `}>
+        <section className={`container_test`}>
             <div className="card_test" style={{minWidth: witdhGreen < 700 ? `${witdhGreen - 50}px`: "650px",  }}>
                 <section className="container_info" >
                     <section className={`header_question`}>
@@ -76,6 +73,7 @@ export const Test = () => {
     return(
         <>
             <Question info={questionInfo} />
+            <ResetTest/>
         </>
     )
 }

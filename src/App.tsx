@@ -1,4 +1,3 @@
-import logoRiccia from './assets/logo.webp'
 import './App.css'
 import { Start } from './components/Start'
 import { UseQuestionsStore } from './store/questions'
@@ -19,12 +18,7 @@ function App() {
   return (
     <>
       <main>
-        <header>
-          <div className='header_test'>
-            <h1 className='main-title'>Test Recomendaciones</h1>
-            <img src={logoRiccia} className='main_logo' alt="Logo la Ragazza Riccia" title='Logo la Ragazza Riccia'/>
-          </div>
-        </header>
+
         <section className='section_test'>
           {questions.length === 0 && !firstQuestion && <Start />}
           {firstQuestion && questions.length == 0 && <FirstQuestion/>} 

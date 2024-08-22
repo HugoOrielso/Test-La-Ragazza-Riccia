@@ -6,6 +6,7 @@ import { GenerateDefatultProduct, GenerateProductsRecomended } from "../helpers/
 import Consejos from "./Consejos"
 import emailjs from '@emailjs/browser'
 import generateTemplate from "../emails/generateTemplate"
+import Header from "./Header"
 
 const MostrarResultados = () => {
   const emailUser = UseRecomendacionesStore(state=> state.emailUser)
@@ -42,6 +43,7 @@ const MostrarResultados = () => {
   return (
     <>
       <section className="wrapper_final_results">
+        <Header/>
         <section className="recomendaciones">
           <GenerateProductsRecomended />
           <GenerateDefatultProduct  />

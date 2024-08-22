@@ -1,6 +1,5 @@
 import { useRef, useState } from "react"
 import '/public/styles/dataClient.css'
-import { EmailIcon } from "../icons"
 import { toast, Toaster } from 'sonner'
 import { UseRecomendacionesStore } from "../store/recomendaciones"
 import { orderAnswersUser } from "../hooks/useQuestionData"
@@ -57,34 +56,22 @@ const GetDataClient = () => {
                 <section className="send_email">
                     <div>
                         <div className="sub_header">
-                            <h3>¡Grazie!</h3>
-                            <h3>Stiamo analizzando le tue risposte</h3>
+                            <h1>¡Grazie!</h1>
+                            <h3>Tra poco vedrai i risultati del tuo test</h3>
                         </div>
                         <div className="sub_header">
-                            <h3>Ora, vorresti ricevere uno sconto?</h3>
-                            <h3>Riceverai uno sconto del 10% sul tuo prossimo acquisto</h3>
+                            <p style={{margin:0}}>Ricevi il risultato del tuo test e un codice sconto del 10% </p>
+                            <p style={{margin:0}}>Scrivici qui sotto la tua email</p>
                         </div>
                     </div>
                     <div className="popup">
                         <form className="form" onSubmit={handleSubmit} ref={form}>
-                            <div className="form_header">
-                                <div className="note">
-                                    <h1 className="title">Ottieni sconto</h1>
-                                </div>
-                                <div className="icon">
-                                    <EmailIcon />
-                                </div>
-                            </div>
-                            <div>
-                                <span className="span_proveer">
-                                    Forniscici la tua email e il tuo nome per inviarti un buono sconto monouso
-                                </span>
-                            </div>
+
                             <label htmlFor="email" style={{width:"100%"}}>
-                                <input id="email" onChange={(e)=> setDataEmail(e.target.value)} placeholder="Enter your e-mail" title="Enter your e-mail" name="user_email" type="email" autoComplete="true" className="input_field" required/>
+                                <input id="email" onChange={(e)=> setDataEmail(e.target.value)} placeholder="Email" title="Email" name="user_email" type="email" autoComplete="true" className="input_field" required/>
                             </label>
                             <label htmlFor="name"  style={{width:"100%"}}>
-                                <input autoComplete="true" id="name" onChange={(e)=> setDataName(e.target.value)} placeholder="Enter your name" title="Enter your e-mail" name="to_name" type="text" className="input_field" required/>
+                                <input autoComplete="true" id="name" onChange={(e)=> setDataName(e.target.value)} placeholder="Nome" title="Nome" name="to_name" type="text" className="input_field" required/>
 
                             </label>
                             <button type="submit" className="submit">vedere il risultato</button>

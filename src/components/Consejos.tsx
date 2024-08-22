@@ -18,7 +18,7 @@ const Consejos = () => {
                 <div className="consejo">
                     <h2>Consiglio: </h2>
                     <p className="p-consejo">
-                        applica i prodotti styling solo alle punte e distribuiscilo con una spazzola, successivamente, dividi in ciocche per dare forma ai tuoi ricci, ricorda di mantenere le ciocche ben inumidite per ottenere risultati da effetto WOW, il gel applicalo solo alla fine facendo scrunch ma scegli la tecnica scrunch più adatta alle tue caratteristiche.
+                        Applica i prodotti styling solo alle punte e distribuiscilo con una spazzola, successivamente, dividi in ciocche per dare forma ai tuoi ricci, ricorda di mantenere le ciocche ben inumidite per ottenere risultati da effetto WOW, il gel applicalo solo alla fine facendo scrunch ma scegli la tecnica scrunch più adatta alle tue caratteristiche.
                     </p>
                 </div>
             }

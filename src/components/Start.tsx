@@ -1,4 +1,5 @@
 import { UseQuestionsStore } from '../store/questions'
+import Header from './Header'
 import '/public/styles/start.css'
 
 export const Start = ()=>{
@@ -8,8 +9,11 @@ export const Start = ()=>{
     }
 
     return(
-        <button onClick={handleClick} className="button-iniciar">
-            ¡Empezar!
-        </button>
+        <>
+            <Header/>
+            <button onClick={handleClick} className="button-iniciar">
+                ¡Iniziare!
+            </button>
+        </>
     )
 }

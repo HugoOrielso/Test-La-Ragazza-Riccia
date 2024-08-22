@@ -29,7 +29,7 @@ export const GenerateDefatultProduct = () =>{
                               <h3> {producto.nombre} </h3>
                               <h4> {producto.precio} €</h4>
                             </div>
-                            <a href={producto.webSite}> Ver detalle </a>
+                            <a target="_blank" href={producto.webSite}> Ver detalle </a>
                           </div>
                         </div>
                       )
@@ -40,7 +40,7 @@ export const GenerateDefatultProduct = () =>{
             )
           })
         }
-      </div>: null
+      </div> : null
       }
     </>
   )
@@ -74,7 +74,7 @@ export const GenerateProductsRecomended = () =>{
                                 <h3> {item.nombre} </h3>
                                 <h4> {item.precio} €</h4>
                               </div>
-                              <a href={item.webSite}> Ver detalle </a>
+                              <a target="_blank" href={item.webSite}> Ver detalle </a>
                             </div>
                           </div>
                         )
