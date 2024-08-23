@@ -8,7 +8,7 @@
               },
               "recommendation": [
                 {
-                  "rutina": ["Lavaggio invertito basso (LIB)."],
+                  "rutina": ["LAVAGGIO INVERTITO: Applica il balsamo su tutte le lunghezze, senza risciacquarlo, applica lo shampoo 1 volta. Risciacqua completamente. Se senti le lunghezze secche applica nuovamente il balsamo o leave in."],
                   "productos": [
                     {
                       "nombre": "Shampoo 250 ml",
@@ -64,7 +64,7 @@
                 },
                 "recommendation": [
                   {
-                    "rutina": ["Lavaggio invertito basso (LIB)."],
+                    "rutina": ["LAVAGGIO INVERTITO: Applica il balsamo su tutte le lunghezze, senza risciacquarlo, applica lo shampoo 1 volta. Risciacqua completamente. Se senti le lunghezze secche applica nuovamente il balsamo o leave in."],
                     "productos": [
                       {
                         "nombre": "Shampoo 250 ml",
@@ -92,7 +92,7 @@
                 },
                 "recommendation": [
                     {
-                      "rutina": ["Lavaggio invertito basso (LIB)."],
+                      "rutina": ["LAVAGGIO INVERTITO: Applica il balsamo su tutte le lunghezze, senza risciacquarlo, applica lo shampoo 1 volta. Risciacqua completamente. Se senti le lunghezze secche applica nuovamente il balsamo o leave in."],
                       "productos": [
                         {
                           "nombre": "Shampoo 250 ml",
@@ -120,7 +120,7 @@
                 },
                 "recommendation": [
                     {
-                      "rutina": ["Lavaggio invertito basso (LIB), con 1 solo passaggio di shampoo."],
+                      "rutina": ["LAVAGGIO INVERTITO: Applica il balsamo su tutte le lunghezze, senza risciacquarlo, applica lo shampoo 1 volta. Risciacqua completamente. Se senti le lunghezze secche applica nuovamente il balsamo o leave in."],
                       "productos": [
                         {
                           "nombre": "Shampoo 250 ml",
@@ -176,7 +176,7 @@
                 },
                 "recommendation": [
                     {
-                      "rutina": ["Lavaggio invertito alto (LIA) con 1 solo pasaggio di shampoo."],
+                      "rutina": ["LAVAGGIO INVERTITO: Applica il balsamo su tutte le lunghezze, senza risciacquarlo, applica lo shampoo x 2 volte,  risciacqua abbondantemente."],
                       "productos": [
                         {
                           "nombre": "Shampoo 250 ml",
@@ -204,7 +204,7 @@
                 },
                 "recommendation": [
                     {
-                      "rutina": ["Lavaggio invertito basso (LIB)."],
+                      "rutina": ["LAVAGGIO INVERTITO: Applica il balsamo su tutte le lunghezze, senza risciacquarlo, applica lo shampoo 1 volta. Risciacqua completamente. Se senti le lunghezze secche applica nuovamente il balsamo o leave in."],
                       "productos": [
                         {
                           "nombre": "Shampoo 250 ml",

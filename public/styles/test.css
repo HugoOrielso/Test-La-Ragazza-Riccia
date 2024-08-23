@@ -28,7 +28,6 @@
     margin-bottom: .5em;
     width: 100%;
     gap: 2px;
-    min-height: 75px;
     overflow: hidden;
 }
 
@@ -237,12 +236,9 @@
 }
 
 @media screen and (max-width:550px) {
-    .header_question{
-        min-height: 100px;
-    }
 
     .span_explanation_question{
-        font-size: 11px;
+        font-size: 13px;
     }
 }
 

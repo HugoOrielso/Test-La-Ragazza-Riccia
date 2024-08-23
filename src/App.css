@@ -68,23 +68,22 @@
   
 }
 
-@media screen and (max-width:470px) {
-  .main-title{
-    font-size: 1.5em;
-    margin: 0;
-    text-align: left;
-  }
-}
 
-@media screen and (max-width:430px) {
-  .logo{
-    height: 3em;
+@media screen and (max-width:480px) {
+  .header_test{
+  
+  
+    & .main-title{
+      font-size: 2em;
+    }
+  
+    & .artukge_title{
+      font-size: 3em;
+    }
+    
   }
-  .main-title{
-    font-size: 1.5em;
-    margin: 0;
-    text-align: left;
-  }
+  
+
 }
 
 @media screen and (max-width:350px) {
