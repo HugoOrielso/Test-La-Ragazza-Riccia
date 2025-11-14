@@ -3,7 +3,6 @@ import { Recommendation } from '../types';
 import ConsejoEmail from './ConsejoEmail';
 
 export const SendEmail = ({recomendacion,consejo}:{recomendacion: Recommendation[], consejo:string | null}) => {
-
     return (
         <Html>
             <Head/>
@@ -25,7 +24,7 @@ export const SendEmail = ({recomendacion,consejo}:{recomendacion: Recommendation
                                                     item.productos.map(p=>{
                                                         return(
                                                         <Link key={p.nombre + p.descripcion} href={p.webSite} className='flex w-full items-center' style={{gap: "10px"}}>
-                                                            <Container className='max-w-[100px] w-full'>
+                                                            <Container className='max-w-[100px] w-full pr-2'>
                                                                 <Img src={p.urlImage} className='w-full max-w-24 '/>
                                                             </Container>
                                                             <Container className='flex  flex-col text-left w-full '>
@@ -54,3 +53,4 @@ export const SendEmail = ({recomendacion,consejo}:{recomendacion: Recommendation
         </Html>
     )
 }
+

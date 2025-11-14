@@ -4,8 +4,6 @@ import { consejos } from "../hooks/useQuestionData";
 import { Recommendation } from "../types";
 import { SendEmail } from "./SendEmail";
 
-
-
 const generateTemplate = () => {
     const consejo = consejos()
     const defaultProduct = UseRecomendacionesStore(state=> state.defaultProduct)
@@ -14,14 +12,13 @@ const generateTemplate = () => {
     
     if (defaultProduct || product) {
         return render(
-            <SendEmail 
+            <SendEmail
                 recomendacion={combinedRecommendations} 
                 consejo={consejo} 
             />,
             { pretty: true }
         );
     }
-
     return null;
 }
 
